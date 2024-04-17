@@ -1,0 +1,4 @@
+repository "FOONKY 2.0@alekate@cloud"
+  path "/"
+    br "/main"
+    co "/main"
