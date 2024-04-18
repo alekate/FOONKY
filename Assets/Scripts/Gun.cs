@@ -8,8 +8,13 @@ public class Gun : MonoBehaviour
     public float fireRate = 3f;
     private float nextTimeToFire = 0f;
 
+    [Header("Tipo de arma")]
+    public bool isPistol;
+    public bool isShotgun;
+    public bool isRifle;
+
     public int maxAmmo;
-    private int currentAmmo;
+    public int currentAmmo;
 
     public ParticleSystem[] muzzleFlashes;
     public Transform fpsCam;
