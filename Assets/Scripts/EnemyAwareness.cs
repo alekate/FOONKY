@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAwareness : MonoBehaviour
 {
     public float awarenessRadius = 15f;
-    public float followingRadius = 20f;
+    public float followingRadius = 30f;
     public bool isAggro;
     public Material aggroMaterial;
     public Material material;

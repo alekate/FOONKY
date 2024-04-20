@@ -2,28 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI healthUI;
+	[SerializeField] private TextMeshProUGUI armorUI;
 
     public int maxHealth;
-    private int health;
+    public int health;
 
     public int maxArmor;
-    private int armor;
-
-    /*
-    [Header("Animator")]
-    public Animator PlayerDead; // Declare PlayerDead as an Animator
-    private bool isDead;
-    */
+    public int armor;
 
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
-
-        //PlayerDead = GetComponentInChildren<Animator>(); 
     }
 
     // Update is called once per frame
@@ -35,7 +30,9 @@ public class PlayerHealth : MonoBehaviour
             Debug.Log("ouch");
         }
 
-       // PlayerDead.SetBool("isDead", isDead);
+        healthUI.text = health.ToString();
+		armorUI.text = armor.ToString();
+
     }
 
     public void DamagePlayer(int damage)

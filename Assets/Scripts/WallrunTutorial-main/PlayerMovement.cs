@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {   
+
+
 	[Header("Animator")]
 	public Animator camAnim;
 	private bool isWalking;
@@ -116,6 +118,8 @@ public class PlayerMovement : MonoBehaviour
 
 		camAnim.SetBool("isWalking", isWalking);
 		camAnim.SetBool("isSliding", isSliding);
+
+
 
 	}
 

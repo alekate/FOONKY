@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class Gun : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class Gun : MonoBehaviour
     public int maxAmmo;
     public int currentAmmo;
 
+    [SerializeField] private TextMeshProUGUI ammo;
+
     public ParticleSystem[] muzzleFlashes;
     public Transform fpsCam;
     public AudioSource audioSource;
@@ -32,6 +35,7 @@ public class Gun : MonoBehaviour
 
     public void GiveAmmo (int amount, GameObject pickup)
     {
+
         if(currentAmmo < maxAmmo)
         {
             currentAmmo += amount;
@@ -47,10 +51,13 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ammo.text = currentAmmo.ToString();
+
         if(currentAmmo <= 0)
         {
             canAnim.SetBool("isReloading", isReloading);
             isReloading = Input.GetButtonDown("Fire1");
+            
             return; //detiene el metodo para que no continue
         }
 
@@ -83,8 +90,6 @@ public class Gun : MonoBehaviour
                 }
             }
         }
-
-
     }
 
     void Shoot()
@@ -111,9 +116,11 @@ public class Gun : MonoBehaviour
             }
 
             Instantiate(bulletImpact, hit.point, Quaternion.LookRotation(hit.normal));
+
         }
 
         currentAmmo--;
+
     }
 
 

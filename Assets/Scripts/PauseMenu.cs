@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
 
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI; 
+    public GameObject gamePlayUI; 
     public PlayerMovement PlayerMovementScript;
 
     // Update is called once per frame
@@ -28,7 +29,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-
+        gamePlayUI.SetActive(true);
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f; //1 es el tiempo normal
         GameIsPaused = false;
@@ -41,7 +42,7 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
-
+        gamePlayUI.SetActive(false);
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f; //podes poner mas para asi dar un efecto de slowmo
         GameIsPaused = true;

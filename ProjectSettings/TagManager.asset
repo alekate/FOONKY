@@ -9,6 +9,9 @@ TagManager:
   - Ground
   - JumpBoost
   - JumpBoostJumper
+  - Pistol
+  - Shootgun
+  - Rifle
   layers:
   - Default
   - TransparentFX
