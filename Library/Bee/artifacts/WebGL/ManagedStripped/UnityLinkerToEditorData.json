@@ -129,6 +129,12 @@
             "icon": null
           },
           {
+            "name": "AudioMixer",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "AudioSource",
             "scenes": [
               "Assets/Scenes/DEMO LEVEL.unity"
@@ -271,7 +277,9 @@
           },
           {
             "name": "LightingSettings",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/DEMO LEVEL.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -281,6 +289,12 @@
               "Assets/Scenes/DEMO LEVEL.unity",
               "Assets/Scenes/MENU.unity"
             ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "LineRenderer",
+            "scenes": [],
             "dependencyType": 0,
             "icon": null
           },
@@ -515,6 +529,12 @@
             "icon": null
           },
           {
+            "name": "TrailRenderer",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "Transform",
             "scenes": [],
             "dependencyType": 1,
@@ -567,6 +587,12 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.physics"
+          },
+          {
+            "name": "Required by Physics2D Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.physics2d"
           },
           {
             "name": "Required by RuntimeInitializeOnLoadManagerInitializer Module",
@@ -710,6 +736,14 @@
             "icon": null
           },
           {
+            "name": "MeshCollider",
+            "scenes": [
+              "Assets/Scenes/DEMO LEVEL.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "PhysicMaterial",
             "scenes": [
               "Assets/Scenes/DEMO LEVEL.unity"
@@ -728,6 +762,31 @@
             "scenes": [
               "Assets/Scenes/DEMO LEVEL.unity"
             ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "SphereCollider",
+            "scenes": [
+              "Assets/Scenes/DEMO LEVEL.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          }
+        ]
+      },
+      {
+        "name": "Physics2D",
+        "dependencies": [
+          {
+            "name": "Physics2DSettings",
+            "scenes": [],
+            "dependencyType": 1,
+            "icon": null
+          },
+          {
+            "name": "Rigidbody2D",
+            "scenes": [],
             "dependencyType": 0,
             "icon": null
           }
@@ -800,6 +859,12 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.physics"
+          },
+          {
+            "name": "Required by Physics2D Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.physics2d"
           },
           {
             "name": "Required by RuntimeInitializeOnLoadManagerInitializer Module",

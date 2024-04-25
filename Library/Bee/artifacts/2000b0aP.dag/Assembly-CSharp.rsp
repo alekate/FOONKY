@@ -90,8 +90,10 @@
 -define:ENABLE_TIMELINE
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
+-define:DOTWEEN
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/Plugins/Demigiant/DOTween/DOTween.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.6f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/mscorlib.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.6f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.ComponentModel.Composition.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.6f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Core.dll"
@@ -279,7 +281,9 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.6f1/Editor/Data/PlaybackEngines/WebGLSupport/Managed/UnityEngine.WindModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.6f1/Editor/Data/PlaybackEngines/WebGLSupport/Managed/UnityEngine.XRModule.dll"
 -r:"Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/2000b0aP.dag/Assembly-CSharp-firstpass.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aP.dag/Unity.AI.Navigation.ref.dll"
+-r:"Library/Bee/artifacts/2000b0aP.dag/Unity.ProBuilder.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aP.dag/Unity.TextMeshPro.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aP.dag/Unity.Timeline.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aP.dag/Unity.VisualScripting.Core.ref.dll"
@@ -290,16 +294,19 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.6f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/Billboard.cs"
 "Assets/Scripts/DestroyOverTime.cs"
-"Assets/Scripts/EnemyAI.cs"
-"Assets/Scripts/EnemyAwareness.cs"
-"Assets/Scripts/EnemyHealth.cs"
-"Assets/Scripts/Gun.cs"
+"Assets/Scripts/Enemy/EnemyAI.cs"
+"Assets/Scripts/Enemy/EnemyAwareness.cs"
+"Assets/Scripts/Enemy/EnemyHealth.cs"
 "Assets/Scripts/MainMenu.cs"
+"Assets/Scripts/MoveObjects.cs"
 "Assets/Scripts/PauseMenu.cs"
+"Assets/Scripts/Player/Gun.cs"
+"Assets/Scripts/Player/ItemPickup.cs"
+"Assets/Scripts/Player/PlayerHealth.cs"
+"Assets/Scripts/Player/WallrunTutorial-main/MoveCamera.cs"
+"Assets/Scripts/Player/WallrunTutorial-main/PlayerMovement.cs"
+"Assets/Scripts/Player/WeaponSwitching.cs"
 "Assets/Scripts/Target.cs"
-"Assets/Scripts/WallrunTutorial-main/MoveCamera.cs"
-"Assets/Scripts/WallrunTutorial-main/PlayerMovement.cs"
-"Assets/Scripts/WeaponSwitching.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"
