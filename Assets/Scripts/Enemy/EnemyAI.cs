@@ -10,6 +10,12 @@ public class EnemyAI : MonoBehaviour
     private NavMeshAgent enemyNavMeshAgent;
     public LayerMask whatIsGround, whatIsPlayer;
 
+   public float shotSpeed;
+
+    //Bala
+    public GameObject projectile;
+
+
     //Patrulla
     public Vector3 walkPoint;
     bool walkPointSet;
@@ -22,11 +28,15 @@ public class EnemyAI : MonoBehaviour
     public float attackRange;
     public bool playerInAttackRange;
 
+    public Animator enemyAnim;
+    private bool isAttacking;
+
     private void Start()
     {
         enemyAwareness = GetComponent<EnemyAwareness>();
         playerTransform = FindObjectOfType<PlayerMovement>().transform;
         enemyNavMeshAgent = GetComponent<NavMeshAgent>();
+        GetComponentInChildren<Animation>();
     }
 
     private void Update()
@@ -36,6 +46,13 @@ public class EnemyAI : MonoBehaviour
         if (!enemyAwareness.isAggro == false && !playerInAttackRange) Patroling();
         if (enemyAwareness.isAggro == true && !playerInAttackRange) ChasePlayer();
         if (enemyAwareness.isAggro == true && playerInAttackRange) AttackPlayer();
+
+        if (!enemyAnim.GetCurrentAnimatorStateInfo(0).IsName("AttackAnimationName"))
+        {
+            isAttacking = false;
+        }
+
+        enemyAnim.SetBool("isAttacking", isAttacking);
     }
 
     private void Patroling()
@@ -89,18 +106,21 @@ public class EnemyAI : MonoBehaviour
 
         if(!alreadyAttacked)
         {
+            isAttacking = true;
+            // dispara la bala
+            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * shotSpeed, ForceMode.Impulse);
+            //rb.AddForce(transform.up * 4f, ForceMode.Impulse);
 
-
+            isAttacking = true;
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
-
     }
 
     private void ResetAttack()
     {
         alreadyAttacked = false;
-
     }
 
     private void OnDrawGizmosSelected() 

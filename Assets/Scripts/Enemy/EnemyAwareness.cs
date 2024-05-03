@@ -6,35 +6,51 @@ public class EnemyAwareness : MonoBehaviour
 {
     public float awarenessRadius = 15f;
     public float followingRadius = 30f;
-    public bool isAggro;
-    public Material aggroMaterial;
-    public Material material;
     private Transform playerTransform;
+    public Animator enemyAnim;
+    public bool isAggro;
 
+    public float audioPlayInterval = 5f; // Adjust this value as needed
+    public float delayBetweenClips = 2f; // Adjust this value as needed
+    private float timeSinceLastAudioPlay;
+
+    public AudioSource audioSource;
+    public AudioClip clip;
 
     private void Start()
     {
         playerTransform = FindObjectOfType<PlayerMovement>().transform;
+        GetComponentInChildren<Animation>();
+        //audioSource = GetComponent<AudioSource>(); 
+        //audioSource.clip = clip;
+        timeSinceLastAudioPlay = 0f; 
     }
 
     private void Update()
     {
-        var dist = Vector3.Distance(transform.position, playerTransform.position);
+        enemyAnim.SetBool("isAggro", isAggro);
 
+        var dist = Vector3.Distance(transform.position, playerTransform.position);
 
         if (dist < awarenessRadius)
         {
-            GetComponent<MeshRenderer>().material = aggroMaterial;
             isAggro = true;
-            //Debug.Log("teveo lol");
+            if (Time.time - timeSinceLastAudioPlay >= audioPlayInterval)
+            {
+                StartCoroutine(PlayAudioWithDelay());
+            }
         }
-
-        if(dist > followingRadius)
+        else
         {
-            GetComponent<MeshRenderer>().material = material;
             isAggro = false;
-            //Debug.Log("NOteveo lol");
+            audioSource.Stop(); // Stop playing the audio clip when the player is out of range
         }
     }
 
+    private IEnumerator PlayAudioWithDelay()
+    {
+        audioSource.PlayOneShot(clip);
+        timeSinceLastAudioPlay = Time.time;
+        yield return new WaitForSeconds(delayBetweenClips);
+    }
 }

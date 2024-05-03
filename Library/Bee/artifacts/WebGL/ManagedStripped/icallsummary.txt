@@ -36,6 +36,8 @@ UnityEngine.AI.NavMeshBuildSource::InternalGetObject
 UnityEngine.AI.NavMeshData::Internal_Create
 UnityEngine.AI.NavMeshData::set_position_Injected
 UnityEngine.AI.NavMeshData::set_rotation_Injected
+UnityEngine.Animation::GetStateCount
+UnityEngine.Animation::GetStateAtIndex
 UnityEngine.AnimationCurve::Internal_Equals
 UnityEngine.AnimationCurve::get_length
 UnityEngine.AnimationCurve::Internal_Create
@@ -48,6 +50,8 @@ UnityEngine.AnimationCurve::set_preWrapMode
 UnityEngine.AnimationCurve::GetKeys
 UnityEngine.Animations.AnimationLayerMixerPlayable::SetSingleLayerOptimizationInternal
 UnityEngine.Animator::get_hasBoundPlayables
+UnityEngine.Animator::StringToHash
+UnityEngine.Animator::GetAnimatorStateInfo
 UnityEngine.Animator::ResetTriggerString
 UnityEngine.Animator::SetBoolString
 UnityEngine.Animator::SetTriggerString
@@ -64,7 +68,9 @@ UnityEngine.Audio.AudioMixer::SetFloat
 UnityEngine.AudioSource::GetPitch
 UnityEngine.AudioSource::get_volume
 UnityEngine.AudioSource::PlayHelper
+UnityEngine.AudioSource::PlayOneShotHelper
 UnityEngine.AudioSource::SetPitch
+UnityEngine.AudioSource::Stop
 UnityEngine.AudioSource::set_volume
 UnityEngine.Behaviour::get_enabled
 UnityEngine.Behaviour::get_isActiveAndEnabled

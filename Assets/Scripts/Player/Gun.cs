@@ -27,6 +27,10 @@ public class Gun : MonoBehaviour
     [Header("Animator")]
     public Animator canAnim;
     private bool isReloading;
+    private bool isShootingPistol;
+    private bool isShootingShotgun;
+    private bool isShootingRifle;
+
 
     void Start()
     {
@@ -52,19 +56,35 @@ public class Gun : MonoBehaviour
     void Update()
     {
         ammo.text = currentAmmo.ToString();
+        canAnim.SetBool("isShootingPistol", isShootingPistol);
+        canAnim.SetBool("isShootingShotgun", isShootingShotgun);
+        canAnim.SetBool("isShootingRifle", isShootingRifle);
+
 
         if(currentAmmo <= 0)
         {
             canAnim.SetBool("isReloading", isReloading);
             isReloading = Input.GetButtonDown("Fire1");
             
+            canAnim.SetBool("isShootingPistol", false);
+            canAnim.SetBool("isShootingShotgun", false);
+            canAnim.SetBool("isShootingRifle", false);
+            
             return; //detiene el metodo para que no continue
         }
 
+        
         if (gameObject.name == "RIFLE NAME PLACEH")  //soluciones rudimentarias no juzgen, es para hacer el rifle automatico (GetButton para hacerlo autommatica)
         {
+            canAnim.SetBool("isRifle", true);
+            canAnim.SetBool("isShotgun", false);
+            canAnim.SetBool("isPistol", false);
+
             if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
             {
+                
+                isShootingRifle = Input.GetButton("Fire1");
+
                 Shoot();
                 foreach (ParticleSystem muzzleFlash in muzzleFlashes)
                 {
@@ -72,28 +92,67 @@ public class Gun : MonoBehaviour
                 }
                 nextTimeToFire = Time.time + 1f / fireRate;
                 audioSource.Play();
+                
+            }
+            else
+            {
+                canAnim.SetBool("isShootingRifle", false);
             }
         }
+
         else
         {
-            if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire) //Fire1 es el LMB en Unity 
+            
+            
+            if (gameObject.name == "Spraycan (Pistol)")
             {
-                Shoot();
-                muzzleFlashes[0].Play();
-                nextTimeToFire = Time.time + 1f / fireRate;
-                audioSource.Play();
+                canAnim.SetBool("isPistol", true);
+                canAnim.SetBool("isShotgun", false);
+                canAnim.SetBool("isShootingShotgun", false);
 
-                if (gameObject.name == "Shootspray (Shootgun)") //para que la falta de sistema de particulas no de error en codigo
+                if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
                 {
+                    Shoot();
+                    muzzleFlashes[0].Play();
+                    isShootingPistol = Input.GetButtonDown("Fire1");
+                    audioSource.Play();
+                    nextTimeToFire = Time.time + 1f / fireRate;
+                }
+                else
+                {
+                    canAnim.SetBool("isShootingPistol", false);
+                }
+                    
+            }
+                
+            if (gameObject.name == "Shotspray (Shotgun)") 
+            {
+                canAnim.SetBool("isShotgun", true);
+                canAnim.SetBool("isPistol", false);
+                canAnim.SetBool("isShootingPistol", false);
+
+                if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
+                {
+                    Shoot();
                     muzzleFlashes[1].Play();
                     muzzleFlashes[2].Play();
+                    isShootingShotgun = Input.GetButtonDown("Fire1");
+                    audioSource.Play();
+                    nextTimeToFire = Time.time + 1f / fireRate;
+                }
+                else
+                {
+                    canAnim.SetBool("isShootingShotgun", false);
                 }
             }
+                   
         }
+        
     }
 
     void Shoot()
     {
+
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {

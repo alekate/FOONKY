@@ -13,6 +13,7 @@ public class WeaponSwitching : MonoBehaviour
     void Start()
     {
         SelectWeapon();
+        
     }
 
     // Update is called once per frame

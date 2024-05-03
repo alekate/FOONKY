@@ -24,11 +24,11 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
+        /*if(Input.GetKeyDown(KeyCode.Q))
         {
             DamagePlayer(30);
             Debug.Log("ouch");
-        }
+        }*/
 
         healthUI.text = health.ToString();
 		armorUI.text = armor.ToString();
