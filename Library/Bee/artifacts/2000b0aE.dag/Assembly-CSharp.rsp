@@ -359,6 +359,7 @@
 "Assets/Scripts/Player/Gun.cs"
 "Assets/Scripts/Player/ItemPickup.cs"
 "Assets/Scripts/Player/PlayerHealth.cs"
+"Assets/Scripts/Player/RespawnPlayer.cs"
 "Assets/Scripts/Player/WallrunTutorial-main/MoveCamera.cs"
 "Assets/Scripts/Player/WallrunTutorial-main/PlayerMovement.cs"
 "Assets/Scripts/Player/WeaponSwitching.cs"

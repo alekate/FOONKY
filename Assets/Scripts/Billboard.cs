@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Billboard : MonoBehaviour
 {
-
     public Transform player;
 
     // Update is called once per frame
