@@ -52,7 +52,6 @@ public class WeaponSwitching : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             selectedWeapon = 0; 
-;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2) && transform.childCount >= 2) //se agrega la segunda condicon para ver si existe un segundo objeto q sea hijo 
