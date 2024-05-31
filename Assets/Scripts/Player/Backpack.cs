@@ -88,4 +88,20 @@ public class Backpack : MonoBehaviour
             default: return;
         }
     }
+
+    public bool KeyCheck(string key)
+    {
+        switch(key)
+        {
+            case "key1":
+                return key1; 
+            break;
+
+            case "key2":
+                return key2;
+            break;
+
+            default: return false;  
+        }
+    }
 }
