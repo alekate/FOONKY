@@ -24,7 +24,6 @@ public class DoorButton : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {    
-                    Debug.Log("lol");
                     door.SetActive(false);
                     this.GetComponent<Renderer>().material.color = Color.red;
                 }   

@@ -6,10 +6,12 @@ public class EnemyHealth : MonoBehaviour
 {
     public float health = 50f;
     public SpriteRenderer spriteRenderer;
+    public EnemyAwareness enemyAwareness;
 
     private void Start() 
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        enemyAwareness = GetComponentInChildren<EnemyAwareness>();  
     }
 
     public void TakeDamage (float amount)
@@ -17,6 +19,7 @@ public class EnemyHealth : MonoBehaviour
         health -= amount;
         spriteRenderer.color = Color.red;
         Invoke("ColorChange", 0.2f);
+        enemyAwareness.isAggro = true;
         if (health <= 0f)
         {
             Die();

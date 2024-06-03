@@ -240,7 +240,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 		if (grounded && crouching)
 		{
-			num5 = 0f;
+			num5 = 0.3f;
 		}
 		if (wallRunning)
 		{
