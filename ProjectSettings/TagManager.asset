@@ -10,8 +10,8 @@ TagManager:
   - JumpBoost
   - JumpBoostJumper
   - Pistol
-  - Shootgun
   - Rifle
+  - Shotgun
   layers:
   - Default
   - TransparentFX

@@ -32,7 +32,7 @@ public class EnemyAwareness : MonoBehaviour
 
         var dist = Vector3.Distance(transform.position, playerTransform.position);
 
-        if (dist < awarenessRadius)
+        if (dist < awarenessRadius || isAggro)
         {
             isAggro = true;
             if (Time.time - timeSinceLastAudioPlay >= audioPlayInterval)

@@ -8,14 +8,15 @@ public class Gun : MonoBehaviour
     public float range = 100f;
     public float fireRate = 3f;
     private float nextTimeToFire = 0f;
+    public Backpack backpack;
 
     [Header("Tipo de arma")]
     public bool isPistol;
     public bool isShotgun;
     public bool isRifle;
 
-    public int maxAmmo;
     public int currentAmmo;
+    public string tag;
 
     [SerializeField] private TextMeshProUGUI ammo;
 
@@ -31,28 +32,19 @@ public class Gun : MonoBehaviour
     private bool isShootingShotgun;
     private bool isShootingRifle;
 
-
+    private void OnEnable() 
+    {
+        Debug.Log("lol");
+        BulletFind();  
+    }
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        backpack = GetComponentInParent<Backpack>();
+        tag = gameObject.tag;
+        BulletFind();  
     }
 
-    public void GiveAmmo (int amount, GameObject pickup)
-    {
-
-        if(currentAmmo < maxAmmo)
-        {
-            currentAmmo += amount;
-            Destroy(pickup);
-        }
-
-        if(currentAmmo > maxAmmo)
-        {
-            currentAmmo = maxAmmo;
-        }
-    }
-
-    // Update is called once per frame
     void Update()
     {
         ammo.text = currentAmmo.ToString();
@@ -179,8 +171,25 @@ public class Gun : MonoBehaviour
         }
 
         currentAmmo--;
+        backpack.AmmoUsed(tag);
 
     }
 
+    private void BulletFind()
+    {
+        switch (tag)
+        {
+            case "Rifle": currentAmmo = backpack.currentRifleAmmo; 
+            break;
 
+            case "Pistol": currentAmmo = backpack.currentPistolAmmo; 
+            break;
+
+            case "Shotgun": currentAmmo = backpack.currentShotgunAmmo; 
+            break;
+
+            default:
+            return;
+        }
+    }
 }

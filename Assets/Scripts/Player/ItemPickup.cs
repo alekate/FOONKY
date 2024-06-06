@@ -8,20 +8,8 @@ public class ItemPickup : MonoBehaviour
     public bool isHealth;
     public bool isArmor;
     public bool isAmmo;
-
+    public string typeAmmo;
     public int amount;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -39,7 +27,7 @@ public class ItemPickup : MonoBehaviour
             
             if(isAmmo)
             {
-                other.GetComponentInChildren<Gun>().GiveAmmo(amount, this.gameObject);
+                other.GetComponent<Backpack>().GiveAmmo(amount, typeAmmo, this.gameObject);
             }
 
             
