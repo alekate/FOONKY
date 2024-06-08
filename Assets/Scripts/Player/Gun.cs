@@ -32,11 +32,6 @@ public class Gun : MonoBehaviour
     private bool isShootingShotgun;
     private bool isShootingRifle;
 
-    private void OnEnable() 
-    {
-        Debug.Log("lol");
-        BulletFind();  
-    }
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -170,12 +165,12 @@ public class Gun : MonoBehaviour
 
         }
 
-        currentAmmo--;
         backpack.AmmoUsed(tag);
+        BulletFind();
 
     }
 
-    private void BulletFind()
+    public void BulletFind()
     {
         switch (tag)
         {

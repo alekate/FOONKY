@@ -278,28 +278,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Alejo Perot
+  m_text: 'ALEJO PEROT
 
-    como
+    SANTIAGO AIRAUDO
 
-
-    Game Designer
-
-    Level Designer
-
-    Programador
-
-    Artista
-    conceptual
-
-    Artistas del juego
-
-    Productor
-
-    Director de proyecto
-
-    Control
-    de calidad (QA)'
+    JOAQUIN BARROS'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fea117022d5bf2f40b17edac0e6bb473, type: 2}
   m_sharedMaterial: {fileID: -4195694404275278634, guid: fea117022d5bf2f40b17edac0e6bb473, type: 2}
