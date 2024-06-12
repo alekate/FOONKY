@@ -6,7 +6,11 @@ public class Billboard : MonoBehaviour
 {
     public Transform player;
 
-    // Update is called once per frame
+     void Start()
+    {
+        player = FindObjectOfType<PlayerMoves>().transform; 
+    }
+
     void Update()
     {
         transform.LookAt(player.position);

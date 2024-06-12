@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638510506625481534
+      ticks: 638535617132780456
     m_Hash: 307103579
   m_LockFileStatus:
     m_FilePath: "D:/UnRaf/4\xB0 a\xF1o/Taller 4/FOONKY/FOONKY/Packages/packages-lock.json"
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638510506625481534
+      ticks: 638535617132790471
     m_Hash: 1769296134
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -742,6 +742,7 @@ m_ResolvedPackages:
     - 3.0.6
     - 3.0.7
     - 3.0.8
+    - 3.0.9
     - 3.2.0-pre.1
     - 3.2.0-pre.2
     - 3.2.0-pre.3
@@ -751,12 +752,14 @@ m_ResolvedPackages:
     - 3.2.0-pre.7
     - 3.2.0-pre.8
     - 3.2.0-pre.9
+    - 3.2.0-pre.10
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     compatible:
     - 3.0.6
     - 3.0.7
     - 3.0.8
+    - 3.0.9
     - 3.2.0-pre.1
     - 3.2.0-pre.2
     - 3.2.0-pre.3
@@ -766,9 +769,10 @@ m_ResolvedPackages:
     - 3.2.0-pre.7
     - 3.2.0-pre.8
     - 3.2.0-pre.9
+    - 3.2.0-pre.10
     - 4.0.0-pre.1
     - 4.0.0-pre.2
-    recommended: 3.0.8
+    recommended: 3.0.9
     deprecated: []
   dependencies:
   - name: com.unity.ugui
@@ -918,6 +922,7 @@ m_ResolvedPackages:
     - 1.8.4
     - 1.8.5
     - 1.8.6
+    - 1.8.7
     compatible:
     - 1.7.5
     - 1.7.6
@@ -928,6 +933,7 @@ m_ResolvedPackages:
     - 1.8.4
     - 1.8.5
     - 1.8.6
+    - 1.8.7
     recommended: 1.7.6
     deprecated: []
   dependencies:

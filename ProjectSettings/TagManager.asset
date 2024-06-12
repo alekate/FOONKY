@@ -12,6 +12,7 @@ TagManager:
   - Pistol
   - Rifle
   - Shotgun
+  - Wall
   layers:
   - Default
   - TransparentFX
