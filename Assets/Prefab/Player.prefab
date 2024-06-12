@@ -5017,7 +5017,7 @@ GameObject:
   - component: {fileID: 3795175762865911561}
   m_Layer: 9
   m_Name: Shotspray (Shotgun)
-  m_TagString: Shootgun
+  m_TagString: Shotgun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5055,11 +5055,12 @@ MonoBehaviour:
   damage: 50
   range: 50
   fireRate: 1.5
+  backpack: {fileID: 0}
   isPistol: 0
   isShotgun: 1
   isRifle: 0
-  maxAmmo: 20
-  currentAmmo: 5
+  currentAmmo: 0
+  tag: 
   ammo: {fileID: 0}
   muzzleFlashes:
   - {fileID: 4518164368788166639}
@@ -15025,6 +15026,8 @@ GameObject:
   - component: {fileID: 5012824937298455494}
   - component: {fileID: 4089281360290123647}
   - component: {fileID: 9144687074033076913}
+  - component: {fileID: 5350398543691491474}
+  - component: {fileID: 1605270575998139408}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -15196,6 +15199,39 @@ MonoBehaviour:
   grounded: 0
   onWall: 0
   jumpForce: 800
+--- !u!114 &5350398543691491474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3637726127652951372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88a9c23e1d612840b45bd5217bb993c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 0}
+--- !u!114 &1605270575998139408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3637726127652951372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 516121270a1b23a428c52f889c141713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentShotgunAmmo: 5
+  maxShotgunAmmo: 20
+  currentPistolAmmo: 10
+  maxPistolAmmo: 30
+  currentRifleAmmo: 35
+  maxRifleAmmo: 100
+  key1: 0
+  key2: 0
 --- !u!1 &3804826153120984989
 GameObject:
   m_ObjectHideFlags: 0
@@ -15317,11 +15353,12 @@ MonoBehaviour:
   damage: 15
   range: 100
   fireRate: 1.8
+  backpack: {fileID: 0}
   isPistol: 1
   isShotgun: 0
   isRifle: 0
-  maxAmmo: 30
-  currentAmmo: 10
+  currentAmmo: 0
+  tag: 
   ammo: {fileID: 0}
   muzzleFlashes:
   - {fileID: 7470871965210781969}
@@ -30332,11 +30369,12 @@ MonoBehaviour:
   damage: 10
   range: 100
   fireRate: 7
+  backpack: {fileID: 0}
   isPistol: 0
   isShotgun: 0
   isRifle: 1
-  maxAmmo: 100
-  currentAmmo: 35
+  currentAmmo: 0
+  tag: 
   ammo: {fileID: 0}
   muzzleFlashes:
   - {fileID: 5885676341160247536}
