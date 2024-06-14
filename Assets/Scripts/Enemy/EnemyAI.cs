@@ -34,7 +34,7 @@ public class EnemyAI : MonoBehaviour
     private void Start()
     {
         enemyAwareness = GetComponent<EnemyAwareness>();
-        playerTransform = FindObjectOfType<PlayerMovement>().transform;
+        playerTransform = FindObjectOfType<PlayerMoves>().transform;
         enemyNavMeshAgent = GetComponent<NavMeshAgent>();
         GetComponentInChildren<Animation>();
     }

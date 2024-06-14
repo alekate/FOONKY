@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638535645760415938
-    m_Hash: 2477253539
+      ticks: 638539158064006569
+    m_Hash: 3332788305
   m_LockFileStatus:
     m_FilePath: D:/Unity/Proyects/FOONKY/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638535645760969239
-    m_Hash: 206061648
+      ticks: 638539158064016578
+    m_Hash: 3005380161
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:

@@ -35,7 +35,7 @@ public class Gun : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        backpack = GetComponentInParent<Backpack>();
+        backpack = FindObjectOfType<Backpack>();
         tag = gameObject.tag;
         BulletFind();  
     }

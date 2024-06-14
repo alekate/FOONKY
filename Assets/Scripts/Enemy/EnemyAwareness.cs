@@ -19,7 +19,7 @@ public class EnemyAwareness : MonoBehaviour
 
     private void Start()
     {
-        playerTransform = FindObjectOfType<PlayerMovement>().transform;
+        playerTransform = FindObjectOfType<PlayerMoves>().transform;
         GetComponentInChildren<Animation>();
         //audioSource = GetComponent<AudioSource>(); 
         //audioSource.clip = clip;
