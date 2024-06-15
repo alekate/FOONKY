@@ -9,12 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MENU.unity
     guid: d06ee22423fb93e46b3d66d7823b9ce5
   - enabled: 1
-    path: Assets/Scenes/DEMO LEVEL.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/CREDITS.unity
-    guid: 467818468ad08724e825314d726177b6
+    path: Assets/Scenes/Analytics.unity
+    guid: 6511ac4264e2b07448bc00076d5cf6c6
   - enabled: 1
     path: Assets/Scenes/LEVEL1.unity
     guid: 6d9a1d0381abdde46b281bb81405323d
+  - enabled: 1
+    path: Assets/Scenes/CREDITS.unity
+    guid: 467818468ad08724e825314d726177b6
+  - enabled: 0
+    path: Assets/Scenes/DEMO LEVEL.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
