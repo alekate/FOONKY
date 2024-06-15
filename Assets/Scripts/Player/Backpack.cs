@@ -104,4 +104,23 @@ public class Backpack : MonoBehaviour
             default: return false;  
         }
     }
+
+    public void GiveKey (string key, GameObject pickup)
+    {
+        switch(key)
+        {
+            case "key1":
+                key1 = true; 
+            break;
+
+            case "key2":
+                key2 = true;
+            break;
+
+            default:
+            break;  
+        }
+
+        Destroy(pickup);
+    }
 }

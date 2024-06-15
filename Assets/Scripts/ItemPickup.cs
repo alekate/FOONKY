@@ -9,6 +9,7 @@ public class ItemPickup : MonoBehaviour
     public bool isArmor;
     public bool isAmmo;
     public string typeAmmo;
+    public bool isKey;
     public int amount;
 
     void Start ()
@@ -34,6 +35,11 @@ public class ItemPickup : MonoBehaviour
             {
                 other.GetComponent<Backpack>().GiveAmmo(amount, typeAmmo, this.gameObject);
                 other.GetComponentInChildren<Gun>().BulletFind();
+            }
+
+            if(isKey)
+            {
+                other.GetComponent<Backpack>().GiveKey(typeAmmo, this.gameObject);
             }
 
             pickUpSound.Play();

@@ -156,7 +156,7 @@ void Shoot()
         EnemyHealth enemy = hit.transform.GetComponent<EnemyHealth>();
         if (enemy != null)
         {
-            enemy.TakeDamage(damage);
+            enemy.TakeDamage(damage, tag);
             Instantiate(bulletImpact, hit.point, Quaternion.LookRotation(hit.normal));
             return;
         }

@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class DoorButton : MonoBehaviour
 {
-    public GameObject door;
+    public Animator anim;
     public bool keyNeed;
     public string key;
     public bool playerOn;
     public bool haveKey;
+
+    private void Start() 
+    {
+        anim = GetComponent<Animator>(); 
+    }
 
     private void OnTriggerEnter(Collider other) 
     {
@@ -24,16 +29,14 @@ public class DoorButton : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {    
-                    door.SetActive(false);
-                    this.GetComponent<Renderer>().material.color = Color.red;
+                    anim.SetBool("open", true);
                 }   
             }
             else
             {
                 if (Input.GetKeyDown(KeyCode.E) && haveKey)
                 {
-                    door.SetActive(false);
-                    this.GetComponent<Renderer>().material.color = Color.red;
+                    anim.SetBool("open", true);
                 }
             } 
         }
