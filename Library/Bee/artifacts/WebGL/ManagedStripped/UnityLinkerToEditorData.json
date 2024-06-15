@@ -6,6 +6,22 @@
         "dependencies": [
           {
             "name": "NavMeshAgent",
+            "scenes": [
+              "Assets/Scenes/LEVEL1.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "NavMeshData",
+            "scenes": [
+              "Assets/Scenes/LEVEL1.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "NavMeshObstacle",
             "scenes": [],
             "dependencyType": 0,
             "icon": null
@@ -645,6 +661,12 @@
             "icon": "package/com.unity.modules.tls"
           },
           {
+            "name": "Required by Terrain Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.terrain"
+          },
+          {
             "name": "Required by TextCoreFontEngine Module",
             "scenes": [],
             "dependencyType": 2,
@@ -824,6 +846,14 @@
             ],
             "dependencyType": 0,
             "icon": null
+          },
+          {
+            "name": "SphereCollider",
+            "scenes": [
+              "Assets/Scenes/LEVEL1.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
           }
         ]
       },
@@ -931,6 +961,12 @@
             "icon": "package/com.unity.modules.tls"
           },
           {
+            "name": "Required by Terrain Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.terrain"
+          },
+          {
             "name": "Required by TextCoreFontEngine Module",
             "scenes": [],
             "dependencyType": 2,
@@ -1000,6 +1036,23 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.unitywebrequest"
+          }
+        ]
+      },
+      {
+        "name": "Terrain",
+        "dependencies": [
+          {
+            "name": "Terrain",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "TerrainData",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
           }
         ]
       },

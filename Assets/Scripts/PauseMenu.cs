@@ -36,6 +36,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
         PlayerMovementScript.enabled = true;
+        Debug.Log("resume");
     }
 
     void Pause()
@@ -48,12 +49,16 @@ public class PauseMenu : MonoBehaviour
 		Cursor.visible = true;
         PlayerMovementScript.enabled = false;
 
+       
+
     }
 
     public void LoadMenu()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MENU");
+        Debug.Log("menu");
+
     }
 
 
