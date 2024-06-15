@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI; 
     public GameObject gamePlayUI; 
-    public PlayerMovement PlayerMovementScript;
+    public PlayerMoves PlayerMovementScript;
 
     // Update is called once per frame
     void Update()
@@ -36,8 +36,6 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
         PlayerMovementScript.enabled = true;
-
-
     }
 
     void Pause()
