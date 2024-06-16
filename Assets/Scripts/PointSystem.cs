@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.Services.Analytics;
-using Unity.Services.Core;
+
 
 public class PointSystem : MonoBehaviour
 {
@@ -12,10 +11,7 @@ public class PointSystem : MonoBehaviour
     public int rifleKills;
     public int graffitiCount;
 
-    async void Start()
-    {
-        await UnityServices.InitializeAsync();
-    }
+
 
     public void CountPoints(int points, string gun)
     {
@@ -43,17 +39,12 @@ public class PointSystem : MonoBehaviour
 
                 Debug.Log("Cartel");
 
-                CustomEvent LevelEndEvent = new CustomEvent("LevelEndEvent")
-                {
-                    { "levelGraffiti", graffitiCount }
-                };
-                AnalyticsService.Instance.RecordEvent(LevelEndEvent);
-                AnalyticsService.Instance.Flush();
-
                 break;
 
             default:
-                break;
+            break;
         }
     }
+
+
 }

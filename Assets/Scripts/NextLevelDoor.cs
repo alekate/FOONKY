@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Unity.Services.Analytics;
+using Unity.Services.Core;
 
 public class NextLevelDoor : MonoBehaviour
 {
-    public GameObject endLevelUI; 
-    public GameObject gamePlayUI; 
-    public GameObject pauseMenuUI; 
+    public GameObject endLevelUI;
+    public GameObject gamePlayUI;
+    public GameObject pauseMenuUI;
     public PlayerMoves PlayerMovementScript;
     public static bool GameIsPaused = false;
 
@@ -22,13 +24,16 @@ public class NextLevelDoor : MonoBehaviour
     [SerializeField] private TextMeshProUGUI countPointsText;
     [SerializeField] private TextMeshProUGUI timerText;
 
-    void Start()
+    async void Start()
     {
         pointSystem = FindObjectOfType<PointSystem>();
         timer = FindObjectOfType<Timer>();
+
+        // Initialize Unity services
+        await UnityServices.InitializeAsync();
     }
 
-    private void OnCollisionEnter(Collision other) 
+    private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -37,7 +42,7 @@ public class NextLevelDoor : MonoBehaviour
             shotgunKillsText.text = pointSystem.shotgunKills.ToString();
             pistolKillsText.text = pointSystem.pistolKills.ToString();
             countPointsText.text = pointSystem.countPoints.ToString();
-            
+
             // Update the timer text using the Timer component
             timerText.text = timer.timerText.text;
 
@@ -50,6 +55,24 @@ public class NextLevelDoor : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             PlayerMovementScript.enabled = false;
+
+            LevelEnd();
         }
+    }
+
+    private void LevelEnd()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        
+        var eventParams = new Dictionary<string, object>
+        {
+            { "levelGraffiti", pointSystem.graffitiCount },
+            { "levelTime", timer.ElapsedTime }, // Use public property ElapsedTime
+            { "userLevel", currentSceneName }
+        };
+
+        // Record the event with AnalyticsService.Instance.CustomData
+        AnalyticsService.Instance.CustomData("LevelEndEvent", eventParams);
+        AnalyticsService.Instance.Flush();
     }
 }

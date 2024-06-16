@@ -4,7 +4,8 @@ using Unity.Services.Analytics;
 using Unity.Services.Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static EventManager;
+using AnalyticsEvent = Unity.Services.Analytics.Event;
+
 
 public class NewBehaviourScript : MonoBehaviour
 {
@@ -20,19 +21,21 @@ public class NewBehaviourScript : MonoBehaviour
     }
 
     public void ConsentGiven()
-	{
-		AnalyticsService.Instance.StartDataCollection();
-	}
+    {
+        AnalyticsService.Instance.StartDataCollection();
+    }
 
     public void LoadScene()
     {  
-        LevelStartEvent levelStart = new LevelStartEvent
+        var eventParams = new Dictionary<string, object>
         {
-            levelIndex = 2,
+            {"userLevel", 2},
         };
 
-        AnalyticsService.Instance.RecordEvent(levelStart);
+        AnalyticsService.Instance.CustomData("LevelStartEvent", eventParams);
         AnalyticsService.Instance.Flush();
+        
+        
         SceneManager.LoadScene("Level1");
     }
 }

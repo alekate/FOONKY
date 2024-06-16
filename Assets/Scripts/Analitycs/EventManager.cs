@@ -5,13 +5,13 @@ using AnalyticsEvent = Unity.Services.Analytics.Event;
 
 public class EventManager : MonoBehaviour
 {
-    public class GameStartEvent : AnalyticsEvent
+    public class GameCompleteEvent : AnalyticsEvent
     {
-		public GameStartEvent() : base("GameStart")
+		public GameCompleteEvent() : base("GameComplete")
 		{
 		}
 
-		public int totalTime { set { SetParameter("totalTime", value);}}
+		public float totalTime { set { SetParameter("totalTime", value);}}
 
     }
 
@@ -21,17 +21,17 @@ public class EventManager : MonoBehaviour
 		{
 		}
 
-		public int levelIndex { set { SetParameter("levelIndex", value); } }
+		public int userLevel { set { SetParameter("userLevel", value); } }
     }
 
-public class LevelEndEvent : AnalyticsEvent
+	public class LevelEndEvent : AnalyticsEvent
     {
 		public LevelEndEvent() : base("LevelEnd")
 		{
 		}
 
-		public int levelIndex { set { SetParameter("levelIndex", value); } }
-		public int levelTime { set { SetParameter("levelTime", value); } }
+		public int userLevel { set { SetParameter("userLevel", value); } }
+		public float levelTime { set { SetParameter("levelTime", value); } }
 		public int levelGraffiti { set { SetParameter("levelGraffiti", value); } }
 		public float levelTotal { set { SetParameter("levelTotal", value); } }
 
@@ -43,9 +43,9 @@ public class LevelEndEvent : AnalyticsEvent
 		{
 		}
 
-		public int levelIndex { set { SetParameter("levelIndex", value); } }
+		public int userLevel { set { SetParameter("userLevel", value); } }
 		public string enemyType { set { SetParameter("enemyType", value); } }
-		public float deathCount { set { SetParameter("deathCount", value); } }
+		public int deathCount { set { SetParameter("deathCount", value); } }
 		public int deathFall { set { SetParameter("deathFall", value); } }
 		public int deathEnemy { set { SetParameter("deathEnemy", value); } }
     }
