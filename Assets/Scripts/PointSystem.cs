@@ -6,10 +6,13 @@ using UnityEngine;
 public class PointSystem : MonoBehaviour
 {
     public float countPoints;
-    public int pistolKills;
-    public int shotgunKills;
-    public int rifleKills;
+    public int pistolKill;
+    public int shotgunKill;
+    public int rifleKill;
+    public int totalKills;
     public int graffitiCount;
+    public int deathCount;
+    public int deathFall;
 
 
 
@@ -19,17 +22,20 @@ public class PointSystem : MonoBehaviour
         {
             case "Pistol":
                 countPoints += points;
-                pistolKills++;
+                pistolKill++;
+                totalKills++;
                 break;
 
             case "Shotgun":
                 countPoints += points;
-                shotgunKills++;
+                shotgunKill++;
+                totalKills++;
                 break;
 
             case "Rifle":
                 countPoints += points;
-                rifleKills++;
+                rifleKill++;
+                totalKills++;
                 
                 break;
 

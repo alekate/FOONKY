@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
             // If the PlayerHealth component exists, damage the player
             if (playerHealth != null)
             {
-                playerHealth.DamagePlayer(damageAmount);
+                playerHealth.DamagePlayer(damageAmount, "TvFly");
             }
         }
     }

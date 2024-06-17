@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Services.Analytics;
+using Unity.Services.Core;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -10,11 +12,17 @@ public class EnemyHealth : MonoBehaviour
     public EnemyAwareness enemyAwareness;
     public PointSystem pointSystem;
 
-    private void Start() 
+
+    private void Awake() 
+    {
+        
+    }
+    async void Start() 
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         enemyAwareness = GetComponentInChildren<EnemyAwareness>(); 
         pointSystem =  FindObjectOfType<PointSystem>(); 
+        await UnityServices.InitializeAsync();
     }
 
     public void TakeDamage (float amount, string gun)
@@ -26,9 +34,9 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0f)
         {
             pointSystem.CountPoints(points, gun); 
+            WeaponEvent();
             Die();
         }
-    
     }
 
     void Die ()
@@ -39,5 +47,20 @@ public class EnemyHealth : MonoBehaviour
     public void ColorChange()
     {
         spriteRenderer.color = Color.white;
+    }
+
+    private void WeaponEvent()
+    {
+        var eventParams = new Dictionary<string, object>
+        {
+            { "pistolKill", pointSystem.pistolKill },
+            { "shotgunKill", pointSystem.shotgunKill },
+            { "rifleKill", pointSystem.rifleKill },
+            { "weaponTotal", "Pistol, Shotgun, Rifle" }
+        };
+
+        // Record the event with AnalyticsService.Instance.CustomData
+        AnalyticsService.Instance.CustomData("GameOverEvent", eventParams);
+        AnalyticsService.Instance.Flush();
     }
 }

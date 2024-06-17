@@ -13,6 +13,8 @@ public class EnemyAwareness : MonoBehaviour
     public float audioPlayInterval = 5f; // Adjust this value as needed
     public float delayBetweenClips = 2f; // Adjust this value as needed
     private float timeSinceLastAudioPlay;
+    public float resetTime = 5f;
+    public float timer;
 
     public AudioSource audioSource;
     public AudioClip clip;
@@ -32,8 +34,13 @@ public class EnemyAwareness : MonoBehaviour
 
         var dist = Vector3.Distance(transform.position, playerTransform.position);
 
-        if (dist < awarenessRadius || isAggro)
+        if (dist < awarenessRadius || timer < resetTime)
         {
+            if (dist > awarenessRadius)
+            {
+                timer += Time.deltaTime;
+            }
+
             isAggro = true;
             if (Time.time - timeSinceLastAudioPlay >= audioPlayInterval)
             {
@@ -42,6 +49,7 @@ public class EnemyAwareness : MonoBehaviour
         }
         else
         {
+            timer = 0; 
             isAggro = false;
             audioSource.Stop(); // Stop playing the audio clip when the player is out of range
         }

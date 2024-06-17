@@ -13,7 +13,6 @@ public class NextLevelDoor : MonoBehaviour
     public GameObject pauseMenuUI;
     public PlayerMoves PlayerMovementScript;
     public static bool GameIsPaused = false;
-
     private PointSystem pointSystem;
     private Timer timer;
 
@@ -38,9 +37,9 @@ public class NextLevelDoor : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             graffitiCountText.text = pointSystem.graffitiCount.ToString();
-            rifleKillsText.text = pointSystem.rifleKills.ToString();
-            shotgunKillsText.text = pointSystem.shotgunKills.ToString();
-            pistolKillsText.text = pointSystem.pistolKills.ToString();
+            rifleKillsText.text = pointSystem.rifleKill.ToString();
+            shotgunKillsText.text = pointSystem.shotgunKill.ToString();
+            pistolKillsText.text = pointSystem.pistolKill.ToString();
             countPointsText.text = pointSystem.countPoints.ToString();
 
             // Update the timer text using the Timer component

@@ -3,22 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Unity.Services.Analytics;
+using Unity.Services.Core;
 
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI healthUI;
 	[SerializeField] private TextMeshProUGUI armorUI;
+    private PointSystem pointSystem;
 
     public int maxHealth;
     public int health;
 
     public int maxArmor;
     public int armor;
-
-    // Start is called before the first frame update
-    void Start()
+    
+    private void Awake() 
     {
         health = maxHealth;
+        pointSystem = FindObjectOfType<PointSystem>();
+    }
+    
+    async void Start()
+    {
+        await UnityServices.InitializeAsync();
+        LevelStart();
     }
 
     // Update is called once per frame
@@ -35,7 +44,7 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
-    public void DamagePlayer(int damage)
+    public void DamagePlayer(int damage, string attacker)
     {
         if(armor > 0) //verifica si hay armor
         {
@@ -63,8 +72,14 @@ public class PlayerHealth : MonoBehaviour
 
         if (health <= 0) // muelte pj
         {
-            Debug.Log("U Ded haha");
+            if (attacker == "Fall")
+            {
+                pointSystem.deathFall++;
+            }
+            pointSystem.deathCount++;
 
+            Debug.Log("U Ded haha");
+            GameOver(attacker);
             Scene currentScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(currentScene.buildIndex);
         }
@@ -100,5 +115,36 @@ public class PlayerHealth : MonoBehaviour
         }
         
     }  
+
+    private void GameOver(string who)
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        
+        var eventParams = new Dictionary<string, object>
+        {
+            { "deathCount", pointSystem.deathCount },
+            { "deathFall", pointSystem.deathFall },
+            { "enemyType", who },
+            { "userLevel", currentSceneName }
+        };
+
+        // Record the event with AnalyticsService.Instance.CustomData
+        AnalyticsService.Instance.CustomData("GameOverEvent", eventParams);
+        AnalyticsService.Instance.Flush();
+    }
+
+    private void LevelStart()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        
+        var eventParams = new Dictionary<string, object>
+        {
+            { "userLevel", currentSceneName }
+        };
+
+        // Record the event with AnalyticsService.Instance.CustomData
+        AnalyticsService.Instance.CustomData("GameOverEvent", eventParams);
+        AnalyticsService.Instance.Flush();
+    }
 
 }

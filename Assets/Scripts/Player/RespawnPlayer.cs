@@ -24,7 +24,7 @@ public class Respawn : MonoBehaviour
             transform.position = spawnPoint.position;
 
             // Call the DamagePlayer method to decrease the player's health
-            playerHealth.DamagePlayer(30); // Assuming you want to deal 30 damage
+            playerHealth.DamagePlayer(30, "Fall"); // Assuming you want to deal 30 damage
         }    
     }
 }
