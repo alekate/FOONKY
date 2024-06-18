@@ -80,8 +80,7 @@ public class PlayerHealth : MonoBehaviour
 
             Debug.Log("U Ded haha");
             GameOver(attacker);
-            Scene currentScene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(currentScene.buildIndex);
+            health = 100;
         }
         
     }

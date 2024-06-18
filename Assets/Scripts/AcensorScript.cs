@@ -8,6 +8,7 @@ public class AcensorScript : MonoBehaviour
     public bool up = true;
     public bool down = false;
     public BoxCollider trigger;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -20,6 +21,8 @@ public class AcensorScript : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.transform.SetParent(transform);
+            Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
+            rb.useGravity = false;
         }
     }
 
@@ -28,6 +31,8 @@ public class AcensorScript : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.transform.SetParent(null);
+            Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
+            rb.useGravity = true;
         }
     }
 
