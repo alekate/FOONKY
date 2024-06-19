@@ -50,7 +50,9 @@
         "dependencies": [
           {
             "name": "Animation",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/LEVEL1.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },

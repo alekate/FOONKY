@@ -8,7 +8,7 @@ public class BillboardPrefabs : MonoBehaviour
 
     void Start()
     {
-        playerTransform = FindObjectOfType<PlayerMovement>().transform; 
+        playerTransform = FindObjectOfType<PlayerMoves>().transform; 
     }
 
     void Update()

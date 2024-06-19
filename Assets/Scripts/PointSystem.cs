@@ -43,8 +43,6 @@ public class PointSystem : MonoBehaviour
                 countPoints += points;
                 graffitiCount++;
 
-                Debug.Log("Cartel");
-
                 break;
 
             default:

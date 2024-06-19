@@ -171,6 +171,7 @@ UnityEngine.CanvasRenderer::set_hasPopInstruction
 UnityEngine.CanvasRenderer::set_materialCount
 UnityEngine.CanvasRenderer::set_popMaterialCount
 UnityEngine.CanvasRenderer::GetMaterial
+UnityEngine.Collider::set_enabled
 UnityEngine.Collider::get_attachedRigidbody
 UnityEngine.Component::GetComponentsForListInternal
 UnityEngine.Component::get_gameObject
@@ -651,6 +652,7 @@ UnityEngine.Rigidbody2D::MoveRotation_Angle
 UnityEngine.Rigidbody2D::get_position_Injected
 UnityEngine.Rigidbody2D::set_position_Injected
 UnityEngine.SceneManagement.Scene::GetBuildIndexInternal
+UnityEngine.SceneManagement.Scene::GetNameInternal
 UnityEngine.SceneManagement.SceneManager::get_sceneCount
 UnityEngine.SceneManagement.SceneManager::GetActiveScene_Injected
 UnityEngine.SceneManagement.SceneManager::GetSceneAt_Injected

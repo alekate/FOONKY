@@ -34,8 +34,6 @@ extern void AnalyticsServiceInstance_ApplicationQuit_mC6358CE4734C9A39DA8A1AAE1F
 extern void AnalyticsServiceInstance_RecordGameRunningIfNecessary_mDC174CE67E36436A206DDC321308853A727484C3 (void);
 extern void AnalyticsServiceInstance_CustomData_m94776E4A04AA03C7762A7016D35592835FBEB32F (void);
 extern void AnalyticsServiceInstance_CustomData_m3CECDD2821F7AAAB7379F0BF7526E1F6142B3433 (void);
-extern void AnalyticsServiceInstance_RecordEvent_m0AB7E4ED8E3755DDC7229D17335E4CA22F12B78B (void);
-extern void AnalyticsServiceInstance_RecordEvent_m0413C72F90309AB31D137E1CA27BC89C8A8542F6 (void);
 extern void AnalyticsServiceSystemCalls_get_UtcNow_m2E57E69EE63CCEA016E8AB2AE4691CE106C59D7C (void);
 extern void AnalyticsServiceSystemCalls__ctor_m0CE98AA41596DAEC3FE38B2657205368207C45D0 (void);
 extern void Event__ctor_m0144BDC848CAFBCB2AC993A2364B9C283668DADE (void);
@@ -44,9 +42,6 @@ extern void Event_SetParameter_m8A354E5DC32181CF46D38063945E0C344E84AADF (void);
 extern void Event_SetParameter_mB6CF48263908E00976A3462DFCCC2C6F3932A813 (void);
 extern void Event_SetParameter_m7B822197166A38DB5734FEA5CDADF726181F3686 (void);
 extern void Event_SetParameter_mB28A7E58A6629F6427EC47F3822A0C898E7CEF19 (void);
-extern void Event_Serialize_m8379200EDE7E8400244BC8B9A82002C85BED464A (void);
-extern void Event_Validate_mF1F1FC759B4C4BCA949DC71B56E2B4DC2ECFBC97 (void);
-extern void Event_Reset_mB855E911145FF4503C527070F823DC475049A546 (void);
 extern void TransactionCurrencyConverter__ctor_m5ACA84E75A13698EAF50E70DF0FA9FA1EC7DBFFD (void);
 extern void AnalyticsContainer_get_AutoFlushPeriod_mD89D49225FE7E3A9BAA505AAE9642EE42A9FE49A (void);
 extern void AnalyticsContainer_get_Instance_m4C13EB040860BA9F5FDE93883C4ED596EF8A66CE (void);
@@ -94,7 +89,6 @@ extern void DataGenerator_GameStarted_mF939D03E28982A9133039E271F82FFC642D3C0BE 
 extern void DataGenerator_GameEnded_m7B356DF303F2B60863E7A942E847C91F68595DE9 (void);
 extern void DataGenerator_ClientDevice_m245A8C14DF629388644F93AF7BD0C17E42794EB0 (void);
 extern void DataGenerator_PushCommonParams_mBCA2A9870721102F62A8CB5C31BB1E0F84D248B7 (void);
-extern void DataGenerator_PushEvent_mCE3EAEDD58816D94B2A7D8A844CBD1D8CF11A593 (void);
 extern void DebugDevice_IsDebugDevice_mA1EEB1D12950C445B81D7EBE8C254DDE2437B333 (void);
 extern void DeviceVolumeProvider_get_VolumeAvailable_m5CE710060BD8C7D300DD19CC799F82043F624CC4 (void);
 extern void DeviceVolumeProvider_GetDeviceVolume_m795C795430B63C4D9F1084A837E784B2E5337785 (void);
@@ -208,7 +202,7 @@ extern void SessionManager_set_SessionId_mB86AF25C3E32F173BA3D42EFC43B5EDEB88A5D
 extern void SessionManager__ctor_m21E89203802ECBDAB0DCD76F1352FF63A84C4ACC (void);
 extern void SessionManager_StartNewSession_mE4556A817A8E5391B554A7E6953CFE3E12A467F3 (void);
 extern void StandardEventServiceComponent__ctor_mED8BAC8D2E1D561A6DCB4A1F35D4E7A60553CB87 (void);
-static Il2CppMethodPointer s_methodPointers[280] = 
+static Il2CppMethodPointer s_methodPointers[272] = 
 {
 	Ua2CoreInitializeCallback_Register_mF40ACDE0AA72C4F92C34C67044F57796F0EAE2B1,
 	Ua2CoreInitializeCallback_Initialize_mE8CA1840C20490FD250B30B6789619403DDE5748,
@@ -232,8 +226,6 @@ static Il2CppMethodPointer s_methodPointers[280] =
 	AnalyticsServiceInstance_RecordGameRunningIfNecessary_mDC174CE67E36436A206DDC321308853A727484C3,
 	AnalyticsServiceInstance_CustomData_m94776E4A04AA03C7762A7016D35592835FBEB32F,
 	AnalyticsServiceInstance_CustomData_m3CECDD2821F7AAAB7379F0BF7526E1F6142B3433,
-	AnalyticsServiceInstance_RecordEvent_m0AB7E4ED8E3755DDC7229D17335E4CA22F12B78B,
-	AnalyticsServiceInstance_RecordEvent_m0413C72F90309AB31D137E1CA27BC89C8A8542F6,
 	NULL,
 	AnalyticsServiceSystemCalls_get_UtcNow_m2E57E69EE63CCEA016E8AB2AE4691CE106C59D7C,
 	AnalyticsServiceSystemCalls__ctor_m0CE98AA41596DAEC3FE38B2657205368207C45D0,
@@ -243,11 +235,7 @@ static Il2CppMethodPointer s_methodPointers[280] =
 	Event_SetParameter_mB6CF48263908E00976A3462DFCCC2C6F3932A813,
 	Event_SetParameter_m7B822197166A38DB5734FEA5CDADF726181F3686,
 	Event_SetParameter_mB28A7E58A6629F6427EC47F3822A0C898E7CEF19,
-	Event_Serialize_m8379200EDE7E8400244BC8B9A82002C85BED464A,
-	Event_Validate_mF1F1FC759B4C4BCA949DC71B56E2B4DC2ECFBC97,
-	Event_Reset_mB855E911145FF4503C527070F823DC475049A546,
 	TransactionCurrencyConverter__ctor_m5ACA84E75A13698EAF50E70DF0FA9FA1EC7DBFFD,
-	NULL,
 	NULL,
 	NULL,
 	NULL,
@@ -316,7 +304,6 @@ static Il2CppMethodPointer s_methodPointers[280] =
 	NULL,
 	NULL,
 	NULL,
-	NULL,
 	DataGenerator__ctor_mA4F895805C1ED670712EBA41726AD2CC7B0C590A,
 	DataGenerator_SdkStartup_mF4A7453FA11A5B335893005A2EC59B2E5F32376F,
 	DataGenerator_GameRunning_m41DD1BD22000DFEA3968261BCE98B2161CB8C23D,
@@ -325,7 +312,6 @@ static Il2CppMethodPointer s_methodPointers[280] =
 	DataGenerator_GameEnded_m7B356DF303F2B60863E7A942E847C91F68595DE9,
 	DataGenerator_ClientDevice_m245A8C14DF629388644F93AF7BD0C17E42794EB0,
 	DataGenerator_PushCommonParams_mBCA2A9870721102F62A8CB5C31BB1E0F84D248B7,
-	DataGenerator_PushEvent_mCE3EAEDD58816D94B2A7D8A844CBD1D8CF11A593,
 	DebugDevice_IsDebugDevice_mA1EEB1D12950C445B81D7EBE8C254DDE2437B333,
 	DeviceVolumeProvider_get_VolumeAvailable_m5CE710060BD8C7D300DD19CC799F82043F624CC4,
 	DeviceVolumeProvider_GetDeviceVolume_m795C795430B63C4D9F1084A837E784B2E5337785,
@@ -498,7 +484,7 @@ static Il2CppTokenAdjustorThunkPair s_adjustorThunks[2] =
 	{ 0x06000004, U3CInitializeU3Ed__2_MoveNext_m363B0E235E88596349D1E9CE8CE635CA67A17DD9_AdjustorThunk },
 	{ 0x06000005, U3CInitializeU3Ed__2_SetStateMachine_m90B148F8797C14917EEA2A2E6D30FB4562499A8B_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[280] = 
+static const int32_t s_InvokerIndices[272] = 
 {
 	8790,
 	4283,
@@ -522,8 +508,6 @@ static const int32_t s_InvokerIndices[280] =
 	5930,
 	2732,
 	540,
-	4830,
-	2732,
 	0,
 	5737,
 	5930,
@@ -533,11 +517,7 @@ static const int32_t s_InvokerIndices[280] =
 	2728,
 	2737,
 	2725,
-	4830,
 	5930,
-	5930,
-	5930,
-	0,
 	0,
 	0,
 	0,
@@ -606,7 +586,6 @@ static const int32_t s_InvokerIndices[280] =
 	0,
 	0,
 	0,
-	0,
 	1544,
 	4830,
 	4830,
@@ -615,7 +594,6 @@ static const int32_t s_InvokerIndices[280] =
 	2727,
 	4830,
 	4830,
-	2732,
 	8734,
 	8734,
 	8775,
@@ -785,7 +763,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_Unity_Services_Analytics_CodeGenModu
 const Il2CppCodeGenModule g_Unity_Services_Analytics_CodeGenModule = 
 {
 	"Unity.Services.Analytics.dll",
-	280,
+	272,
 	s_methodPointers,
 	2,
 	s_adjustorThunks,
