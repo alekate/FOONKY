@@ -18,5 +18,11 @@ public class Bullet : MonoBehaviour
                 playerHealth.DamagePlayer(damageAmount, "TvFly");
             }
         }
+        
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+        }
+
     }
 }
