@@ -26,15 +26,12 @@ public class DoorButton : MonoBehaviour
         if (playerOn)
         {
             if (!keyNeed)
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {    
-                    anim.SetBool("open", true);
-                }   
+            {  
+                anim.SetBool("open", true); 
             }
             else
             {
-                if (Input.GetKeyDown(KeyCode.E) && haveKey)
+                if (haveKey)
                 {
                     anim.SetBool("open", true);
                 }

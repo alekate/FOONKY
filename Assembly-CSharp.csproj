@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Player\Scripts movimiento 2.0\Sliding.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyAI.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
+     <Compile Include="Assets\Scripts\Analytics\EventManager.cs" />
      <Compile Include="Assets\Scripts\Player\Gun.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
      <Compile Include="Assets\Scripts\Player\Backpack.cs" />
@@ -70,7 +71,6 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
      <Compile Include="Assets\Scripts\PointSystem.cs" />
      <Compile Include="Assets\Scripts\Player\WallrunTutorial-main\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\Analitycs\InitWithDefault.cs" />
      <Compile Include="Assets\Scripts\ItemPickup.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
@@ -79,7 +79,6 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
      <Compile Include="Assets\Scripts\DestroyOverTime.cs" />
-     <Compile Include="Assets\Scripts\Analitycs\EventManager.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
      <Compile Include="Assets\Scripts\CartelPainted.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
@@ -89,6 +88,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+     <Compile Include="Assets\Scripts\PointRecorder.cs" />
      <Compile Include="Assets\Scripts\Target.cs" />
      <Compile Include="Assets\Scripts\Player\Scripts movimiento 2.0\Dashing.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
@@ -102,6 +102,7 @@
      <Compile Include="Assets\Scripts\Billboard.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
      <Compile Include="Assets\Scripts\BillboardPrefabs.cs" />
+     <Compile Include="Assets\Scripts\Analytics\InitWithDefault.cs" />
      <Compile Include="Assets\Scripts\Player\Scripts movimiento 2.0\MoveCamera.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyAwareness.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />

@@ -45,6 +45,10 @@ public class NextLevelDoor : MonoBehaviour
             // Update the timer text using the Timer component
             timerText.text = timer.timerText.text;
 
+            // datos guardados
+            PointRecorder.Instance.AddPoints(pointSystem.countPoints);
+            PointRecorder.Instance.VerifyMaxTime(timer.ElapsedTime);
+
             gamePlayUI.SetActive(false);
             pauseMenuUI.SetActive(false);
             endLevelUI.SetActive(true);

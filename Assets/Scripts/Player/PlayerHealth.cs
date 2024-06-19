@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private TextMeshProUGUI healthUI;
 	[SerializeField] private TextMeshProUGUI armorUI;
     private PointSystem pointSystem;
+    public Transform spawnPoint;
 
     public int maxHealth;
     public int health;
@@ -80,6 +81,7 @@ public class PlayerHealth : MonoBehaviour
 
             Debug.Log("U Ded haha");
             GameOver(attacker);
+            transform.position = spawnPoint.position;
             health = 100;
         }
         
@@ -135,6 +137,7 @@ public class PlayerHealth : MonoBehaviour
     private void LevelStart()
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
+        Debug.Log("nivel: " + currentSceneName);
         
         var eventParams = new Dictionary<string, object>
         {

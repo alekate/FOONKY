@@ -22,6 +22,7 @@ public class AcensorScript : MonoBehaviour
         {
             other.gameObject.transform.SetParent(transform);
             Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
+            rb.AddForce(Vector3.down * 100f, ForceMode.Force);
             rb.useGravity = false;
         }
     }
