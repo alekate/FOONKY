@@ -8,9 +8,10 @@ public class PointRecorder : MonoBehaviour
    public static PointRecorder Instance { get; private set;}
 
    [SerializeField] private float absolutePoints = 0;
-   [SerializeField] private float maxTimeLVL1 = 0;
-   [SerializeField] private float maxTimeLVL2 = 0;
-   [SerializeField] private float maxTimeLVL3 = 0;
+   [SerializeField] public float maxTimeLVL1 = 0;
+   [SerializeField] public float maxTimeLVL2 = 0;
+   [SerializeField] public float maxTimeLVL3 = 0;
+
 
    private void Awake()
    {
@@ -37,21 +38,21 @@ public class PointRecorder : MonoBehaviour
       switch (currentSceneName)
       {
         case "LEVEL1":
-            if (levelTime > maxTimeLVL1)
+            if (levelTime < maxTimeLVL1)
             {
                 maxTimeLVL1 = levelTime;
             }
         break;
 
         case "LEVEL2":
-            if (levelTime > maxTimeLVL2)
+            if (levelTime < maxTimeLVL2)
             {
                 maxTimeLVL2 = levelTime;
             }
         break;
 
         case "LEVEL3":
-            if (levelTime > maxTimeLVL3)
+            if (levelTime < maxTimeLVL3)
             {
                 maxTimeLVL3 = levelTime;
             }

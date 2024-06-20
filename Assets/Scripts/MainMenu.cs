@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 {
 
 
+
     public void PlayGame()
     {
        
@@ -23,7 +24,8 @@ public class MainMenu : MonoBehaviour
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(0.5f); //corutina adnashe
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Load the next scene
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Load the next scene
+        SceneManager.LoadScene("Level1");
         /*
         if (PlayerPrefs.HasKey("HasDoneAnalytics", 0) <= 0)
         {
@@ -38,15 +40,18 @@ public class MainMenu : MonoBehaviour
     public void mainMenu()
     {
         SceneManager.LoadScene("MENU");
+        Time.timeScale = 1;
     }
 
     public void Credits()
     {
         SceneManager.LoadScene("Credits");
+        Time.timeScale = 1;
     }
 
     public void NextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Time.timeScale = 1;
     }
 }

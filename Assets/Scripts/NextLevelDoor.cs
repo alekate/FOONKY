@@ -15,6 +15,7 @@ public class NextLevelDoor : MonoBehaviour
     public static bool GameIsPaused = false;
     private PointSystem pointSystem;
     private Timer timer;
+    private PointRecorder pointRecorder;
 
     [SerializeField] private TextMeshProUGUI graffitiCountText;
     [SerializeField] private TextMeshProUGUI rifleKillsText;
@@ -22,11 +23,13 @@ public class NextLevelDoor : MonoBehaviour
     [SerializeField] private TextMeshProUGUI pistolKillsText;
     [SerializeField] private TextMeshProUGUI countPointsText;
     [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private TextMeshProUGUI maxTimeLVL1Text;
 
     async void Start()
     {
         pointSystem = FindObjectOfType<PointSystem>();
         timer = FindObjectOfType<Timer>();
+        pointRecorder = FindObjectOfType<PointRecorder>();
 
         // Initialize Unity services
         await UnityServices.InitializeAsync();
@@ -41,13 +44,17 @@ public class NextLevelDoor : MonoBehaviour
             shotgunKillsText.text = pointSystem.shotgunKill.ToString();
             pistolKillsText.text = pointSystem.pistolKill.ToString();
             countPointsText.text = pointSystem.countPoints.ToString();
+            maxTimeLVL1Text.text = pointSystem.countPoints.ToString();
 
-            // Update the timer text using the Timer component
+            // Update the timer text using the Timer components
             timerText.text = timer.timerText.text;
+
 
             // datos guardados
             PointRecorder.Instance.AddPoints(pointSystem.countPoints);
             PointRecorder.Instance.VerifyMaxTime(timer.ElapsedTime);
+
+            maxTimeLVL1Text.text = FormatTime(pointRecorder.maxTimeLVL1);
 
             gamePlayUI.SetActive(false);
             pauseMenuUI.SetActive(false);
@@ -61,6 +68,13 @@ public class NextLevelDoor : MonoBehaviour
 
             LevelEnd();
         }
+    }
+    
+    private string FormatTime(float time)
+    {
+        int minutes = Mathf.FloorToInt(time / 60);
+        int seconds = Mathf.FloorToInt(time % 60);
+        return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
     private void LevelEnd()
