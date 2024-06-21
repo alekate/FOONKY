@@ -10,6 +10,7 @@ public class EnemyAwareness : MonoBehaviour
     public Animator enemyAnim;
     public bool isAggro;
 
+
     public float audioPlayInterval = 5f; // Adjust this value as needed
     public float delayBetweenClips = 2f; // Adjust this value as needed
     private float timeSinceLastAudioPlay;

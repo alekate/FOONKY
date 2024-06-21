@@ -6,23 +6,30 @@ using Unity.Services.Core;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public float health = 50f;
+    public float health = 50;
     public int points = 10;
     public SpriteRenderer spriteRenderer;
     public EnemyAwareness enemyAwareness;
     public PointSystem pointSystem;
+    public Animator enemyAnim;
+    public bool isBroken;
+    
 
 
     private void Awake() 
     {
         
     }
+
     async void Start() 
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         enemyAwareness = GetComponentInChildren<EnemyAwareness>(); 
         pointSystem =  FindObjectOfType<PointSystem>(); 
         await UnityServices.InitializeAsync();
+        enemyAnim = GetComponentInChildren<Animator>();
+        enemyAnim.SetFloat("Health", health);
+
     }
 
     public void TakeDamage (float amount, string gun)
@@ -31,7 +38,14 @@ public class EnemyHealth : MonoBehaviour
         spriteRenderer.color = Color.red;
         Invoke("ColorChange", 0.2f);
         enemyAwareness.isAggro = true;
-        if (health <= 0f)
+        enemyAnim.SetFloat("Health", health);
+
+       /* if (health <= 25f)
+        {
+            isBroken = true;
+        }*/
+
+        if (health <= 0)
         {
             pointSystem.CountPoints(points, gun); 
             WeaponEvent();
@@ -48,6 +62,7 @@ public class EnemyHealth : MonoBehaviour
     {
         spriteRenderer.color = Color.white;
     }
+
 
     private void WeaponEvent()
     {
