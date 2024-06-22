@@ -55,6 +55,7 @@ UnityEngine.Animator::StringToHash
 UnityEngine.Animator::GetAnimatorStateInfo
 UnityEngine.Animator::ResetTriggerString
 UnityEngine.Animator::SetBoolString
+UnityEngine.Animator::SetFloatString
 UnityEngine.Animator::SetTriggerString
 UnityEngine.Animator::set_speed
 UnityEngine.Application::get_isBatchMode

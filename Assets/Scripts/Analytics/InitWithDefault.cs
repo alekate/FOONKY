@@ -9,15 +9,9 @@ using AnalyticsEvent = Unity.Services.Analytics.Event;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    private bool firstSession = true;
-
     async void Start()
     {
-        if (firstSession)
-        {
-            await UnityServices.InitializeAsync();
-            firstSession = false;
-        }
+        await UnityServices.InitializeAsync();
     }
 
     public void ConsentGiven()
@@ -26,16 +20,7 @@ public class NewBehaviourScript : MonoBehaviour
     }
 
     public void LoadScene()
-    {  
-        var eventParams = new Dictionary<string, object>
-        {
-            {"userLevel", 2},
-        };
-
-        AnalyticsService.Instance.CustomData("LevelStartEvent", eventParams);
-        AnalyticsService.Instance.Flush();
-        
-        
+    {         
         SceneManager.LoadScene("Level1");
     }
 }

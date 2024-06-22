@@ -55,7 +55,7 @@ public class Backpack : MonoBehaviour
                     currentShotgunAmmo = maxShotgunAmmo;
                 }
             break;
-
+ 
             default: return;
         }
     }

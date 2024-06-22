@@ -80,16 +80,19 @@ public class NextLevelDoor : MonoBehaviour
     private void LevelEnd()
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
+
+        Debug.Log("LevelEndEvent");
+        Debug.Log(currentSceneName);
         
-        var eventParams = new Dictionary<string, object>
+        CustomEvent LevelEndEvent = new CustomEvent("LevelEndEvent")
         {
             { "levelGraffiti", pointSystem.graffitiCount },
             { "levelTime", timer.ElapsedTime }, // Use public property ElapsedTime
-            { "userLevel", currentSceneName }
+            { "levelIndex", currentSceneName }
         };
 
         // Record the event with AnalyticsService.Instance.CustomData
-        AnalyticsService.Instance.CustomData("LevelEndEvent", eventParams);
+        AnalyticsService.Instance.RecordEvent(LevelEndEvent);
         AnalyticsService.Instance.Flush();
     }
 }

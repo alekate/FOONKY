@@ -327,6 +327,7 @@
 "Assets/Scripts/Player/WallrunTutorial-main/MoveCameraFollow.cs"
 "Assets/Scripts/Player/WallrunTutorial-main/PlayerMovement.cs"
 "Assets/Scripts/Player/WeaponSwitching.cs"
+"Assets/Scripts/PointRecorder.cs"
 "Assets/Scripts/PointSystem.cs"
 "Assets/Scripts/Target.cs"
 "Assets/Scripts/Timer.cs"

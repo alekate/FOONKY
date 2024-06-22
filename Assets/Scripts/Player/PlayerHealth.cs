@@ -120,32 +120,36 @@ public class PlayerHealth : MonoBehaviour
     private void GameOver(string who)
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
+        Debug.Log("GameOverEvent");
         
-        var eventParams = new Dictionary<string, object>
+        CustomEvent GameOverEvent = new CustomEvent("GameOverEvent")
         {
             { "deathCount", pointSystem.deathCount },
             { "deathFall", pointSystem.deathFall },
             { "enemyType", who },
-            { "userLevel", currentSceneName }
+            { "levelIndex", currentSceneName }
         };
 
         // Record the event with AnalyticsService.Instance.CustomData
-        AnalyticsService.Instance.CustomData("GameOverEvent", eventParams);
+        AnalyticsService.Instance.RecordEvent(GameOverEvent);
         AnalyticsService.Instance.Flush();
     }
 
     private void LevelStart()
     {
+
         string currentSceneName = SceneManager.GetActiveScene().name;
         Debug.Log("nivel: " + currentSceneName);
+
+        Debug.Log("LevelStart");
         
-        var eventParams = new Dictionary<string, object>
+        CustomEvent LevelStartEvent = new CustomEvent("LevelStartEvent")
         {
-            { "userLevel", currentSceneName }
+            { "levelIndex", currentSceneName }
         };
 
         // Record the event with AnalyticsService.Instance.CustomData
-        AnalyticsService.Instance.CustomData("GameOverEvent", eventParams);
+        AnalyticsService.Instance.RecordEvent(LevelStartEvent);
         AnalyticsService.Instance.Flush();
     }
 

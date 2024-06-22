@@ -23,12 +23,19 @@ public class EnemyHealth : MonoBehaviour
 
     async void Start() 
     {
+        enemyAnim = GetComponentInChildren<Animator>();
+        enemyAnim.SetFloat("Health", health);
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         enemyAwareness = GetComponentInChildren<EnemyAwareness>(); 
         pointSystem =  FindObjectOfType<PointSystem>(); 
-        await UnityServices.InitializeAsync();
-        enemyAnim = GetComponentInChildren<Animator>();
-        enemyAnim.SetFloat("Health", health);
+
+        //await UnityServices.InitializeAsync();
+        /*
+        if(UnityServices.State == ServicesInitializationState.Initialized)
+        {
+            AnalyticsService.Instance.StartDataCollection();
+            Debug.Log("AnalyticsCollection");
+        }*/
 
     }
 
@@ -66,16 +73,19 @@ public class EnemyHealth : MonoBehaviour
 
     private void WeaponEvent()
     {
-        var eventParams = new Dictionary<string, object>
+        Debug.Log("WeaponEvent");
+
+        CustomEvent WeaponEvent = new CustomEvent("WeaponEvent")
         {
             { "pistolKill", pointSystem.pistolKill },
             { "shotgunKill", pointSystem.shotgunKill },
             { "rifleKill", pointSystem.rifleKill },
-            { "weaponTotal", "Pistol, Shotgun, Rifle" }
+            { "weaponTotal", "Pistol, Shotgun, Rifle"} //Actualizar para cuando implementemos tienda
         };
 
         // Record the event with AnalyticsService.Instance.CustomData
-        AnalyticsService.Instance.CustomData("GameOverEvent", eventParams);
+        AnalyticsService.Instance.RecordEvent(WeaponEvent);
         AnalyticsService.Instance.Flush();
     }
+
 }

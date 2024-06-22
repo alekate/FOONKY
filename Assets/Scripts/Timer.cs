@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.Services.Analytics;
+using Unity.Services.Core;
 
 public class Timer : MonoBehaviour
 {
@@ -14,6 +16,13 @@ public class Timer : MonoBehaviour
     void Start()
     {
         elapsedTime = 0f;
+        UnityServices.InitializeAsync();
+        
+        if(UnityServices.State == ServicesInitializationState.Initialized)
+        {
+            AnalyticsService.Instance.StartDataCollection();
+            Debug.Log("AnalyticsCollection");
+        }
     }
 
     void Update()

@@ -21,7 +21,7 @@ public class EventManager : MonoBehaviour
 		{
 		}
 
-		public int userLevel { set { SetParameter("userLevel", value); } }
+		public string levelIndex { set { SetParameter("levelIndex", value); } }
     }
 
 	public class LevelEndEvent : AnalyticsEvent
@@ -30,7 +30,7 @@ public class EventManager : MonoBehaviour
 		{
 		}
 
-		public int userLevel { set { SetParameter("userLevel", value); } }
+		public string levelIndex { set { SetParameter("levelIndex", value); } }
 		public float levelTime { set { SetParameter("levelTime", value); } }
 		public int levelGraffiti { set { SetParameter("levelGraffiti", value); } }
 		public float levelTotal { set { SetParameter("levelTotal", value); } }
@@ -43,7 +43,7 @@ public class EventManager : MonoBehaviour
 		{
 		}
 
-		public int userLevel { set { SetParameter("userLevel", value); } }
+		public string levelIndex { set { SetParameter("levelIndex", value); } }
 		public string enemyType { set { SetParameter("enemyType", value); } }
 		public int deathCount { set { SetParameter("deathCount", value); } }
 		public int deathFall { set { SetParameter("deathFall", value); } }

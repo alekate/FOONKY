@@ -6,6 +6,7 @@ public class CartelPainted : MonoBehaviour
 {
     public int points;
     public bool playerOn;
+    public bool painted;
     public Animator anim;
     public PointSystem pointSystem;
     
@@ -14,21 +15,34 @@ public class CartelPainted : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         pointSystem = FindObjectOfType<PointSystem>();
+        painted = false;
     }
 
     private void OnTriggerEnter(Collider other) 
     {
-        playerOn = other.gameObject.CompareTag("Player");
+        if (other.gameObject.CompareTag("Player"))
+        {
+            playerOn = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other) 
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            playerOn = false;
+        }
     }
 
     private void Update() 
     {
-        if (playerOn)
+        if (playerOn && !painted)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {    
                 anim.SetBool("Painted", true);
                 pointSystem.CountPoints(points, "Cartel");
+                painted = true; // Set the painted flag to true after counting points
             }   
         }
     }

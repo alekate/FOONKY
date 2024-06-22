@@ -28,6 +28,7 @@ extern void UnityServices_get_Instance_m5BA0D657E90B0A0837290E98A0CB13F9D39CA0CD
 extern void UnityServices_set_Instance_m4C250363E94392D1578BEDE13EF067416804C85C (void);
 extern void UnityServices_get_InstantiationCompletion_mA867A00609D9BFFD19B8404887CA781DB60F0AE7 (void);
 extern void UnityServices_set_InstantiationCompletion_mA4D8862E87057DD28B48E93BDA0545E5CDCE8DEC (void);
+extern void UnityServices_get_State_mF530C62B86FBF1BF3B379006DACF9C110FD7BC9D (void);
 extern void UnityServices_get_ExternalUserId_m5028564FBDCC1965850DA78BC91CCA7FF4369AF8 (void);
 extern void UnityServices_set_ExternalUserId_m3D68213DAB808F69A5A8DA5F2C22AA1136C59365 (void);
 extern void UnityServices_InitializeAsync_mDC1CB3B695B5497E7159CE261445C907B26D223A (void);
@@ -38,7 +39,7 @@ extern void U3CInitializeAsyncU3Ed__15_SetStateMachine_m64D4E0EC42AF9A1FF73B65B4
 extern void UnityThreadUtils_set_UnityThreadScheduler_m5AE27DBA9F88FE1CDCB8FBF241A3C1B5628F9BB6 (void);
 extern void UnityThreadUtils_CaptureUnityThreadInfo_m43D8C684F01F8CA911A1D6E80E7E70CC1A0CF579 (void);
 extern void UnityThreadUtils_get_IsRunningOnUnityThread_m5FD8E9090E2A2EE035677BC109B12A234B91A1B4 (void);
-static Il2CppMethodPointer s_methodPointers[27] = 
+static Il2CppMethodPointer s_methodPointers[29] = 
 {
 	ExternalUserIdProperty_get_UserId_mF463E7814BFC0294128FEB39259BEB00692F3295,
 	ExternalUserIdProperty_set_UserId_m49AF583912638B80D441E07E46D5743BC8FA50E7,
@@ -52,11 +53,13 @@ static Il2CppMethodPointer s_methodPointers[27] =
 	ServicesInitializationException__ctor_mF669B3E2EBFCAF30637035325CD9B965BC11B578,
 	UnityProjectNotLinkedException__ctor_mAD5451CE9BDD12E0F183D8E7BA09A469A6C197A1,
 	NULL,
+	NULL,
 	RequestFailedException__ctor_m5F2BC9B778764EF58CA947E789CAEEAD27341C7A,
 	UnityServices_get_Instance_m5BA0D657E90B0A0837290E98A0CB13F9D39CA0CD,
 	UnityServices_set_Instance_m4C250363E94392D1578BEDE13EF067416804C85C,
 	UnityServices_get_InstantiationCompletion_mA867A00609D9BFFD19B8404887CA781DB60F0AE7,
 	UnityServices_set_InstantiationCompletion_mA4D8862E87057DD28B48E93BDA0545E5CDCE8DEC,
+	UnityServices_get_State_mF530C62B86FBF1BF3B379006DACF9C110FD7BC9D,
 	UnityServices_get_ExternalUserId_m5028564FBDCC1965850DA78BC91CCA7FF4369AF8,
 	UnityServices_set_ExternalUserId_m3D68213DAB808F69A5A8DA5F2C22AA1136C59365,
 	UnityServices_InitializeAsync_mDC1CB3B695B5497E7159CE261445C907B26D223A,
@@ -72,44 +75,46 @@ extern void U3CInitializeAsyncU3Ed__15_MoveNext_m84D0CC8DED8AFCA17443A63B13FD710
 extern void U3CInitializeAsyncU3Ed__15_SetStateMachine_m64D4E0EC42AF9A1FF73B65B44D22A07A1B450990_AdjustorThunk (void);
 static Il2CppTokenAdjustorThunkPair s_adjustorThunks[2] = 
 {
-	{ 0x06000017, U3CInitializeAsyncU3Ed__15_MoveNext_m84D0CC8DED8AFCA17443A63B13FD7104ECEEABB8_AdjustorThunk },
-	{ 0x06000018, U3CInitializeAsyncU3Ed__15_SetStateMachine_m64D4E0EC42AF9A1FF73B65B44D22A07A1B450990_AdjustorThunk },
+	{ 0x06000019, U3CInitializeAsyncU3Ed__15_MoveNext_m84D0CC8DED8AFCA17443A63B13FD7104ECEEABB8_AdjustorThunk },
+	{ 0x0600001A, U3CInitializeAsyncU3Ed__15_SetStateMachine_m64D4E0EC42AF9A1FF73B65B44D22A07A1B450990_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[27] = 
+static const int32_t s_InvokerIndices[29] = 
 {
-	5811,
-	4830,
-	5930,
-	5811,
-	5930,
-	4830,
-	4830,
-	5930,
-	4830,
-	2732,
-	4830,
+	5810,
+	4829,
+	5929,
+	5810,
+	5929,
+	4829,
+	4829,
+	5929,
+	4829,
+	2731,
+	4829,
 	0,
-	1489,
-	8755,
-	8639,
-	8755,
-	8639,
-	8755,
-	8639,
-	8755,
-	8409,
-	8790,
-	5930,
-	4830,
-	8639,
-	8790,
-	8734,
+	0,
+	1488,
+	8754,
+	8638,
+	8754,
+	8638,
+	8747,
+	8754,
+	8638,
+	8754,
+	8408,
+	8789,
+	5929,
+	4829,
+	8638,
+	8789,
+	8733,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_Unity_Services_Core_CodeGenModule;
 const Il2CppCodeGenModule g_Unity_Services_Core_CodeGenModule = 
 {
 	"Unity.Services.Core.dll",
-	27,
+	29,
 	s_methodPointers,
 	2,
 	s_adjustorThunks,

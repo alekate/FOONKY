@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f); //corutina adnashe
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Load the next scene
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Analytics");
         /*
         if (PlayerPrefs.HasKey("HasDoneAnalytics", 0) <= 0)
         {
