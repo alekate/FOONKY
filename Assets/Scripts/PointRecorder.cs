@@ -7,7 +7,7 @@ public class PointRecorder : MonoBehaviour
 {
    public static PointRecorder Instance { get; private set;}
 
-   [SerializeField] private float absolutePoints = 0;
+   [SerializeField] public float absolutePoints = 0;
    [SerializeField] public float maxTimeLVL1 = 0;
    [SerializeField] public float maxTimeLVL2 = 0;
    [SerializeField] public float maxTimeLVL3 = 0;
@@ -29,6 +29,11 @@ public class PointRecorder : MonoBehaviour
    public void AddPoints(float levelPoints)
    {
         absolutePoints += levelPoints;
+   }
+
+   public void DecreasePoints(float levelPoints)
+   {
+        absolutePoints -= levelPoints;
    }
 
    public void VerifyMaxTime (float levelTime)

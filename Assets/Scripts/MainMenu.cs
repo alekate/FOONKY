@@ -49,6 +49,12 @@ public class MainMenu : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void Hideout()
+    {
+        SceneManager.LoadScene("HIDEOUT");
+        Time.timeScale = 1;
+    }
+
     public void NextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

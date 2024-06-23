@@ -11,6 +11,7 @@ private float nextTimeToFire = 0f;
 public Backpack backpack;
 
 [Header("Tipo de arma")]
+public bool activeGun;
 public bool isPistol;
 public bool isShotgun;
 public bool isRifle;
