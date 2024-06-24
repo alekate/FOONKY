@@ -7586,9 +7586,9 @@ GameObject:
   - component: {fileID: 748626914}
   - component: {fileID: 748626913}
   - component: {fileID: 748626912}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10665,7 +10665,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 1145471618}
-  m_VersionIndex: 5638
+  m_VersionIndex: 5641
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -21288,9 +21288,9 @@ GameObject:
   - component: {fileID: 1057301442}
   - component: {fileID: 1057301441}
   - component: {fileID: 1057301440}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27155,7 +27155,7 @@ MonoBehaviour:
   isRifle: 0
   currentAmmo: 0
   tag: 
-  ammo: {fileID: 1646641660}
+  ammo: {fileID: 327677952}
   muzzleFlashes:
   - {fileID: 942998030}
   fpsCam: {fileID: 189281440}
@@ -32783,7 +32783,7 @@ MonoBehaviour:
   isRifle: 1
   currentAmmo: 0
   tag: 
-  ammo: {fileID: 228722166}
+  ammo: {fileID: 327677952}
   muzzleFlashes:
   - {fileID: 1137209919}
   - {fileID: 1547980194}
@@ -37756,9 +37756,9 @@ GameObject:
   - component: {fileID: 1551498769}
   - component: {fileID: 1551498768}
   - component: {fileID: 1551498767}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38324,7 +38324,7 @@ MonoBehaviour:
   isRifle: 0
   currentAmmo: 0
   tag: 
-  ammo: {fileID: 2085559162}
+  ammo: {fileID: 327677952}
   muzzleFlashes:
   - {fileID: 946654888}
   - {fileID: 341772487}
