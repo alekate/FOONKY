@@ -11,6 +11,8 @@ public class PointRecorder : MonoBehaviour
    [SerializeField] public float maxTimeLVL1 = 0;
    [SerializeField] public float maxTimeLVL2 = 0;
    [SerializeField] public float maxTimeLVL3 = 0;
+   [SerializeField] public bool haveRifle;
+   [SerializeField] public bool haveShotgun;
 
 
    private void Awake()
@@ -34,6 +36,29 @@ public class PointRecorder : MonoBehaviour
    public void DecreasePoints(float levelPoints)
    {
         absolutePoints -= levelPoints;
+   }
+
+   public void BuyWeapon(string type)
+   {
+        switch (type)
+        {
+            case "Rifle":
+                haveRifle = true;
+            break;
+
+            case "Shotgun":
+                haveShotgun = true;
+            break;
+
+            default:
+                Debug.Log("Weapon not found");
+            break;
+        }
+   }
+
+   public void ActiveShotgun()
+   {
+        haveShotgun = true;
    }
 
    public void VerifyMaxTime (float levelTime)
@@ -67,5 +92,27 @@ public class PointRecorder : MonoBehaviour
             Debug.Log("nivel no encontrado");
         break;
       }
+   }
+
+   public float GetMaxTime (string level)
+   {
+        switch (level)
+        {
+            case "LEVEL1":  
+                return maxTimeLVL1;
+            break;
+
+            case "LEVEL2":  
+                return maxTimeLVL2;
+            break;
+
+            case "LEVEL3":  
+                return maxTimeLVL3;
+            break;
+
+            default:
+                return 0;
+            break;
+        }
    }
 }

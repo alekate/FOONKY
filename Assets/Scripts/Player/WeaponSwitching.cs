@@ -8,12 +8,11 @@ public class WeaponSwitching : MonoBehaviour
     public GameObject weaponUI1;
     public GameObject weaponUI2;
     public GameObject weaponUI3; 
+    public int previousSelectedWeapon;
     
-    // Start is called before the first frame update
     void Start()
     {
         SelectWeapon();
-        
     }
 
     // Update is called once per frame
@@ -21,7 +20,7 @@ public class WeaponSwitching : MonoBehaviour
     {
         //por defult el primer objeto que sea hijo siempre es 0
 
-        int previousSelectedWeapon = selectedWeapon;
+        previousSelectedWeapon = selectedWeapon;
 
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
@@ -54,48 +53,67 @@ public class WeaponSwitching : MonoBehaviour
             selectedWeapon = 0; 
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2) && transform.childCount >= 2) //se agrega la segunda condicon para ver si existe un segundo objeto q sea hijo 
+        if (Input.GetKeyDown(KeyCode.Alpha2) && transform.childCount >= 2 && PointRecorder.Instance.haveShotgun) //se agrega la segunda condicon para ver si existe un segundo objeto q sea hijo 
         {
             selectedWeapon = 1;
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3) && transform.childCount >= 3)
+        if (Input.GetKeyDown(KeyCode.Alpha3) && transform.childCount >= 3 && PointRecorder.Instance.haveRifle)
         {
             selectedWeapon = 2;
-
         }
-
-
 
         if (previousSelectedWeapon != selectedWeapon)
         {
             SelectWeapon();            
         }
 
-        if(selectedWeapon == 0)
-        {
-            weaponUI1.SetActive(true); 
-            weaponUI2.SetActive(false);
-            weaponUI3.SetActive(false);
-        }
-        if(selectedWeapon == 1)
-        {
-            weaponUI2.SetActive(true);
-            weaponUI1.SetActive(false);
-            weaponUI3.SetActive(false);
-        }
-        if(selectedWeapon == 2)
-        {
-            weaponUI3.SetActive(true);
-            weaponUI1.SetActive(false);
-            weaponUI2.SetActive(false);
-        }
-
     }
 
     void SelectWeapon()
     {
+        switch (selectedWeapon)
+        {
+            case 0:
+                weaponUI1.SetActive(true); 
+                weaponUI2.SetActive(false);
+                weaponUI3.SetActive(false);
+            break;
+
+            case 1:
+                if (PointRecorder.Instance.haveShotgun)
+                {
+                    weaponUI2.SetActive(true);
+                    weaponUI1.SetActive(false);
+                    weaponUI3.SetActive(false);
+                }
+                else
+                {
+                    previousSelectedWeapon++;
+                    return;
+                } 
+            break;
+
+            case 2:
+                if (PointRecorder.Instance.haveRifle)
+                {
+                    weaponUI3.SetActive(true);
+                    weaponUI1.SetActive(false);
+                    weaponUI2.SetActive(false);
+                }
+                else
+                {
+                    previousSelectedWeapon = 0;
+                    return;
+                } 
+            break;
+
+            default:
+                Debug.Log("error");
+            break;
+        }
+
         int i = 0;
 
         foreach (Transform weapon in transform)

@@ -9,18 +9,24 @@ public class ShopItem : MonoBehaviour
     private bool playerOn;
 
     [Header("caracteristcas")]
-    public string type;
+    public string tag;
     public string description;
     public float cost;
 
-    void Update()
+    private void Start()
+    {
+        tag = gameObject.tag;
+    }
+
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && playerOn && PointRecorder.Instance.absolutePoints >= cost) 
-            {
-                PointRecorder.Instance.DecreasePoints(cost);
-                Debug.Log("comprado");
-                Destroy(this.gameObject);
-            }
+        {
+            PointRecorder.Instance.DecreasePoints(cost);
+            PointRecorder.Instance.BuyWeapon(tag);
+            Debug.Log("comprado");
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnTriggerEnter(Collider other) 

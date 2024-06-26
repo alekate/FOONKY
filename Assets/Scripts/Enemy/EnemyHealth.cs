@@ -13,13 +13,6 @@ public class EnemyHealth : MonoBehaviour
     public PointSystem pointSystem;
     public Animator enemyAnim;
     public bool isBroken;
-    
-
-
-    private void Awake() 
-    {
-        
-    }
 
     async void Start() 
     {
