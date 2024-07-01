@@ -14,5 +14,10 @@ public class LevelRecord : MonoBehaviour
         int minutes = Mathf.FloorToInt(lvlTime / 60);
         int seconds = Mathf.FloorToInt(lvlTime % 60);
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+        if (lvlTime == 100000) 
+        {
+            timeText.text = "No time";
+        }
     }
 }

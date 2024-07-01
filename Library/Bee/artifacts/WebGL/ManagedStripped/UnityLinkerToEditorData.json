@@ -37,6 +37,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -60,6 +61,7 @@
             "name": "AnimationClip",
             "scenes": [
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -70,6 +72,7 @@
             "name": "Animator",
             "scenes": [
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -80,6 +83,7 @@
             "name": "AnimatorController",
             "scenes": [
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -114,6 +118,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -125,6 +130,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -136,6 +142,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -159,6 +166,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -170,6 +178,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -198,6 +207,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -221,6 +231,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -244,6 +255,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -261,6 +273,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -290,6 +303,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -301,6 +315,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -316,6 +331,7 @@
           {
             "name": "LightingSettings",
             "scenes": [
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity"
             ],
             "dependencyType": 0,
@@ -326,6 +342,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -349,6 +366,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -358,6 +376,7 @@
           {
             "name": "Mesh",
             "scenes": [
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity"
             ],
             "dependencyType": 0,
@@ -366,6 +385,7 @@
           {
             "name": "MeshFilter",
             "scenes": [
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity"
             ],
             "dependencyType": 0,
@@ -374,6 +394,7 @@
           {
             "name": "MeshRenderer",
             "scenes": [
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity"
             ],
             "dependencyType": 0,
@@ -384,6 +405,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -401,6 +423,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -412,6 +435,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -447,6 +471,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -464,6 +489,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -499,6 +525,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -522,6 +549,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -537,6 +565,7 @@
           {
             "name": "SpriteRenderer",
             "scenes": [
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity"
             ],
             "dependencyType": 0,
@@ -787,6 +816,7 @@
           {
             "name": "ParticleSystem",
             "scenes": [
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity"
             ],
             "dependencyType": 0,
@@ -795,6 +825,7 @@
           {
             "name": "ParticleSystemRenderer",
             "scenes": [
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity"
             ],
             "dependencyType": 0,
@@ -808,6 +839,7 @@
           {
             "name": "BoxCollider",
             "scenes": [
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity"
             ],
             "dependencyType": 0,
@@ -816,6 +848,7 @@
           {
             "name": "CapsuleCollider",
             "scenes": [
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity"
             ],
             "dependencyType": 0,
@@ -830,6 +863,7 @@
           {
             "name": "MeshCollider",
             "scenes": [
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity"
             ],
             "dependencyType": 0,
@@ -844,6 +878,7 @@
           {
             "name": "Rigidbody",
             "scenes": [
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity"
             ],
             "dependencyType": 0,
@@ -1098,6 +1133,7 @@
           {
             "name": "Font",
             "scenes": [
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -1150,6 +1186,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],
@@ -1167,6 +1204,7 @@
             "scenes": [
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
+              "Assets/Scenes/HIDEOUT.unity",
               "Assets/Scenes/LEVEL1.unity",
               "Assets/Scenes/MENU.unity"
             ],

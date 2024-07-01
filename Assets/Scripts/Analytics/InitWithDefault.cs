@@ -21,6 +21,6 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void LoadScene()
     {         
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("HIDEOUT");
     }
 }

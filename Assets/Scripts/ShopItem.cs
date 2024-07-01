@@ -42,7 +42,7 @@ public class ShopItem : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            descriptionText.text = "...";
+            descriptionText.text = "What are you buying?";
             playerOn = false;   
         }
     }

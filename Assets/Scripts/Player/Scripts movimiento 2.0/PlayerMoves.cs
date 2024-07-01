@@ -46,6 +46,9 @@ public class PlayerMoves : MonoBehaviour
     private RaycastHit slopeHit;
     private bool exitingSlope;
 
+    [Header ("Audio")]
+    [SerializeField] private AudioSource audioSource;
+
 
     public Transform orientation;
 
@@ -80,10 +83,13 @@ public class PlayerMoves : MonoBehaviour
         readyToJump = true;
 
         startYScale = transform.localScale.y;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
+        Auido();
         // ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
@@ -96,6 +102,16 @@ public class PlayerMoves : MonoBehaviour
             rb.drag = groundDrag;
         else
             rb.drag = 0;
+    }
+
+    public void Auido () 
+    {
+      if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+         audioSource.Play();
+
+        }
+
     }
 
     private void FixedUpdate()
