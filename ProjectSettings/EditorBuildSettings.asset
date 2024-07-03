@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HIDEOUT.unity
     guid: 8a2a41a5cf7239748ab7cc3c2453085a
+  - enabled: 1
+    path: Assets/Scenes/CINEMATIC.unity
+    guid: cd03afed6b972c242b310d8e06edd614
   - enabled: 0
     path: Assets/Scenes/DEMO LEVEL.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab

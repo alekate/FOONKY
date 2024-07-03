@@ -9,6 +9,11 @@ public class DoorLevel : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) 
     {
-        SceneManager.LoadScene(level);    
+        NextLevel();   
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(level);
     }
 }
