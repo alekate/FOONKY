@@ -388,6 +388,8 @@
 "Assets/Scripts/ShopItem.cs"
 "Assets/Scripts/ShopSystem.cs"
 "Assets/Scripts/ShowPoints.cs"
+"Assets/Scripts/Slider.cs"
+"Assets/Scripts/SliderArmor.cs"
 "Assets/Scripts/Target.cs"
 "Assets/Scripts/Timer.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"

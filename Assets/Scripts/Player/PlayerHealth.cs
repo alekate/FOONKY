@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using Unity.Services.Analytics;
 using Unity.Services.Core;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -18,7 +19,10 @@ public class PlayerHealth : MonoBehaviour
 
     public int maxArmor;
     public int armor;
-    
+
+    public LifeSistemSlider lifesistemslider;
+    public ArmorSistemSlider armorsistemslider;
+
     private void Awake() 
     {
         health = maxHealth;
@@ -29,6 +33,8 @@ public class PlayerHealth : MonoBehaviour
     {
         await UnityServices.InitializeAsync();
         LevelStart();
+        lifesistemslider.SetMaxHealth(maxHealth);
+        armorsistemslider.SetMaxArmor(maxArmor);
     }
 
     // Update is called once per frame
@@ -45,6 +51,16 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
+    public void LoseHealthBar()
+    {
+        lifesistemslider.SetHealth(health);
+    }
+
+    public void LoseArmorhBar()
+    {
+        armorsistemslider.SetArmor(armor);
+    }
+    
     public void DamagePlayer(int damage, string attacker)
     {
         if(armor > 0) //verifica si hay armor
@@ -53,6 +69,7 @@ public class PlayerHealth : MonoBehaviour
             if(armor >= damage)
             {
                 armor -= damage;
+                armorsistemslider.SetArmor(armor);
             }
             else if (armor < damage) //si el daño recibido es mayor a la amradura, romper la armadura y hacer el restante daño a la vida
             {
@@ -63,12 +80,14 @@ public class PlayerHealth : MonoBehaviour
                 armor = 0;
 
                 health -= remainingDamage;
+                lifesistemslider.SetHealth(health);
             }
 
         }
         else
         {
             health -= damage;
+            lifesistemslider.SetHealth(health);
         }
 
         if (health <= 0) // muelte pj
@@ -92,6 +111,7 @@ public class PlayerHealth : MonoBehaviour
         if (health < maxHealth)
         {
             health += amount;
+            lifesistemslider.SetHealth(health);
             Destroy(pickup);
         }
 
@@ -107,6 +127,7 @@ public class PlayerHealth : MonoBehaviour
         if(armor < maxArmor)
         {
             armor += amount;
+            armorsistemslider.SetArmor(armor);
             Destroy(pickup);
         }
 
