@@ -55,6 +55,12 @@ public class MainMenu : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void Cinematic()
+    {
+        SceneManager.LoadScene("CINEMATIC");
+        Time.timeScale = 1;
+    }
+
     public void NextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
