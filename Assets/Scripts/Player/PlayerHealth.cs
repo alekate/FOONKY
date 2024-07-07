@@ -9,8 +9,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI healthUI;
-	[SerializeField] private TextMeshProUGUI armorUI;
+   // [SerializeField] private TextMeshProUGUI healthUI;
+   //[SerializeField] private TextMeshProUGUI armorUI;
     private PointSystem pointSystem;
     public Transform spawnPoint;
 
@@ -46,8 +46,8 @@ public class PlayerHealth : MonoBehaviour
             Debug.Log("ouch");
         }*/
 
-        healthUI.text = health.ToString();
-		armorUI.text = armor.ToString();
+       // healthUI.text = health.ToString();
+	   //armorUI.text = armor.ToString();
 
     }
 

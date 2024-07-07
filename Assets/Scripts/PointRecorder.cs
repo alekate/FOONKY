@@ -2,117 +2,134 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+//using TMPro;
 
 public class PointRecorder : MonoBehaviour
 {
-   public static PointRecorder Instance { get; private set;}
+    public static PointRecorder Instance { get; private set; }
 
-   [SerializeField] public float absolutePoints = 0;
-   [SerializeField] public float maxTimeLVL1 = 0;
-   [SerializeField] public float maxTimeLVL2 = 0;
-   [SerializeField] public float maxTimeLVL3 = 0;
-   [SerializeField] public bool haveRifle;
-   [SerializeField] public bool haveShotgun;
+    [SerializeField] public float absolutePoints = 0;
+    [SerializeField] public float maxTimeLVL1 = 0;
+    [SerializeField] public float maxTimeLVL2 = 0;
+    [SerializeField] public float maxTimeLVL3 = 0;
+    [SerializeField] public bool haveRifle;
+    [SerializeField] public bool haveShotgun;
 
+   // public TextMeshProUGUI pointText;
 
-   private void Awake()
-   {
-        if(Instance != null && Instance != this)
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
         else
         {
             Instance = this;
-            DontDestroyOnLoad(this);    
+            DontDestroyOnLoad(this.gameObject);
         }
-   } 
 
-   public void AddPoints(float levelPoints)
-   {
+        //UpdatePointText();
+    }
+
+    private void Update()
+    {
+        //UpdatePointText();
+    }
+
+    /*private void UpdatePointText()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        if (currentSceneName == "HIDEOUT")
+        {
+            pointText.text = absolutePoints.ToString();
+        }
+    }*/
+
+    public void AddPoints(float levelPoints)
+    {
         absolutePoints += levelPoints;
-   }
+        //UpdatePointText();
+    }
 
-   public void DecreasePoints(float levelPoints)
-   {
+    public void DecreasePoints(float levelPoints)
+    {
         absolutePoints -= levelPoints;
-   }
+        //UpdatePointText();
+    }
 
-   public void BuyWeapon(string type)
-   {
+    public void BuyWeapon(string type)
+    {
         switch (type)
         {
             case "Rifle":
                 haveRifle = true;
-            break;
+                break;
 
             case "Shotgun":
                 haveShotgun = true;
-            break;
+                break;
 
             default:
                 Debug.Log("Weapon not found");
-            break;
+                break;
         }
-   }
+    }
 
-   public void ActiveShotgun()
-   {
+    public void ActiveShotgun()
+    {
         haveShotgun = true;
-   }
+    }
 
-   public void VerifyMaxTime (float levelTime)
-   {
-      string currentSceneName = SceneManager.GetActiveScene().name;
+    public void VerifyMaxTime(float levelTime)
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
 
-      switch (currentSceneName)
-      {
-        case "LEVEL1":
-            if (levelTime < maxTimeLVL1)
-            {
-                maxTimeLVL1 = levelTime;
-            }
-        break;
+        switch (currentSceneName)
+        {
+            case "LEVEL1":
+                if (levelTime < maxTimeLVL1)
+                {
+                    maxTimeLVL1 = levelTime;
+                }
+                break;
 
-        case "LEVEL2":
-            if (levelTime < maxTimeLVL2)
-            {
-                maxTimeLVL2 = levelTime;
-            }
-        break;
+            case "LEVEL2":
+                if (levelTime < maxTimeLVL2)
+                {
+                    maxTimeLVL2 = levelTime;
+                }
+                break;
 
-        case "LEVEL3":
-            if (levelTime < maxTimeLVL3)
-            {
-                maxTimeLVL3 = levelTime;
-            }
-        break;
+            case "LEVEL3":
+                if (levelTime < maxTimeLVL3)
+                {
+                    maxTimeLVL3 = levelTime;
+                }
+                break;
 
-        default:
-            Debug.Log("nivel no encontrado");
-        break;
-      }
-   }
+            default:
+                Debug.Log("nivel no encontrado");
+                break;
+        }
+    }
 
-   public float GetMaxTime (string level)
-   {
+    public float GetMaxTime(string level)
+    {
         switch (level)
         {
-            case "LEVEL1":  
+            case "LEVEL1":
                 return maxTimeLVL1;
-            break;
 
-            case "LEVEL2":  
+            case "LEVEL2":
                 return maxTimeLVL2;
-            break;
 
-            case "LEVEL3":  
+            case "LEVEL3":
                 return maxTimeLVL3;
-            break;
 
             default:
                 return 0;
-            break;
         }
-   }
+    }
 }
+
