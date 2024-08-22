@@ -35,6 +35,14 @@ public class NextLevelDoor : MonoBehaviour
         await UnityServices.InitializeAsync();
     }
 
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.L)) 
+        {
+            SceneManager.LoadScene("LEVEL2");
+        }
+    }
+
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player"))

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4512934, g: 0.50095356, b: 0.57323784, a: 1}
+  m_IndirectSpecularColor: {r: 0.45129317, g: 0.5009532, b: 0.57323724, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -21312,6 +21312,7 @@ MonoBehaviour:
   weaponUI1: {fileID: 345243076}
   weaponUI2: {fileID: 43299237}
   weaponUI3: {fileID: 1650041414}
+  previousSelectedWeapon: 0
 --- !u!1 &646241803
 GameObject:
   m_ObjectHideFlags: 0
@@ -35351,17 +35352,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1121668718}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &888654108 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1058559594421216110, guid: 743cdb80ccdf493489bc49df3bc80f57, type: 3}
-  m_PrefabInstance: {fileID: 678048620951369897}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &889848771
 GameObject:
   m_ObjectHideFlags: 0
@@ -54975,17 +54965,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454757349}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1457921069 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7274429986843491265, guid: 743cdb80ccdf493489bc49df3bc80f57, type: 3}
-  m_PrefabInstance: {fileID: 678048620951369897}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1482177707
 GameObject:
   m_ObjectHideFlags: 0
@@ -57040,6 +57019,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   maxSlopeAngle: 40
+  audioSource: {fileID: 0}
   orientation: {fileID: 2090253931}
   state: 0
   sliding: 0
@@ -57135,13 +57115,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98dd6a57de8cefb41889720144f4bbe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthUI: {fileID: 888654108}
-  armorUI: {fileID: 1457921069}
   spawnPoint: {fileID: 0}
   maxHealth: 0
   health: 0
   maxArmor: 0
   armor: 0
+  lifesistemslider: {fileID: 0}
+  armorsistemslider: {fileID: 0}
 --- !u!114 &1607389027
 MonoBehaviour:
   m_ObjectHideFlags: 0
