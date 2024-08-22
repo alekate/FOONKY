@@ -38,7 +38,7 @@ public class CartelPainted : MonoBehaviour
     {
         if (playerOn && !painted)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetMouseButtonDown(0))
             {    
                 anim.SetBool("Painted", true);
                 pointSystem.CountPoints(points, "Cartel");
