@@ -6,7 +6,7 @@ using Unity.Services.Core;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public float health = 50;
+    public float health = 10;
     public int points = 10;
     public SpriteRenderer spriteRenderer;
     public EnemyAwareness enemyAwareness;

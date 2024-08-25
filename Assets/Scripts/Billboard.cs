@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class Billboard : MonoBehaviour
 {
-    public Transform player;
+    public GameObject player;
+    Transform playerTransform;
 
-    // Update is called once per frame
+    void Start() 
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerTransform = player.transform;
+    }
+
     void Update()
     {
-        transform.LookAt(player.position);
+        transform.LookAt(playerTransform.position);
     }
 }
