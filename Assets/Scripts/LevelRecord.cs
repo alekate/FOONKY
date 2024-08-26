@@ -6,6 +6,7 @@ using TMPro;
 public class LevelRecord : MonoBehaviour
 {
     public TextMeshPro timeText; 
+    public TextMeshPro graffittiText; 
     public string level;
 
     void Start()
@@ -19,5 +20,7 @@ public class LevelRecord : MonoBehaviour
         {
             timeText.text = "No time";
         }
+
+        graffittiText.text = PointRecorder.Instance.GetGraffittis(level);
     }
 }

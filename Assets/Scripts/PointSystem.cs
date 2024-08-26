@@ -11,10 +11,20 @@ public class PointSystem : MonoBehaviour
     public int rifleKill;
     public int totalKills;
     public int graffitiCount;
+    public int graffitiTotal;
     public int deathCount;
     public int deathFall;
 
 
+    private void Start() 
+    {
+        GameObject[] graffittis = GameObject.FindGameObjectsWithTag("Graffitti");
+
+        foreach (GameObject graffitti in graffittis)
+        {
+           graffitiTotal++;
+        }
+    }
 
     public void CountPoints(int points, string gun)
     {

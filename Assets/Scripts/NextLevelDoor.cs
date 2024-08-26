@@ -16,6 +16,7 @@ public class NextLevelDoor : MonoBehaviour
     private PointSystem pointSystem;
     private Timer timer;
     private PointRecorder pointRecorder;
+    string currentSceneName;
 
     [SerializeField] private TextMeshProUGUI graffitiCountText;
     [SerializeField] private TextMeshProUGUI rifleKillsText;
@@ -30,7 +31,7 @@ public class NextLevelDoor : MonoBehaviour
         pointSystem = FindObjectOfType<PointSystem>();
         timer = FindObjectOfType<Timer>();
         pointRecorder = FindObjectOfType<PointRecorder>();
-
+        currentSceneName = SceneManager.GetActiveScene().name;
         // Initialize Unity services
         await UnityServices.InitializeAsync();
     }
@@ -47,7 +48,7 @@ public class NextLevelDoor : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            graffitiCountText.text = pointSystem.graffitiCount.ToString();
+            graffitiCountText.text = pointSystem.graffitiCount.ToString() + "/" + pointSystem.graffitiTotal.ToString();
             rifleKillsText.text = pointSystem.rifleKill.ToString();
             shotgunKillsText.text = pointSystem.shotgunKill.ToString();
             pistolKillsText.text = pointSystem.pistolKill.ToString();
@@ -61,7 +62,7 @@ public class NextLevelDoor : MonoBehaviour
             // datos guardados
             PointRecorder.Instance.AddPoints(pointSystem.countPoints);
             PointRecorder.Instance.VerifyMaxTime(timer.ElapsedTime);
-
+            PointRecorder.Instance.SetGraffittis(currentSceneName, pointSystem.graffitiCount, pointSystem.graffitiTotal);
             maxTimeLVL1Text.text = FormatTime(pointRecorder.maxTimeLVL1);
 
             gamePlayUI.SetActive(false);
@@ -87,8 +88,6 @@ public class NextLevelDoor : MonoBehaviour
 
     private void LevelEnd()
     {
-        string currentSceneName = SceneManager.GetActiveScene().name;
-
         Debug.Log("LevelEndEvent");
         Debug.Log(currentSceneName);
         

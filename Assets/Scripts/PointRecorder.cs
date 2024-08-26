@@ -10,8 +10,14 @@ public class PointRecorder : MonoBehaviour
 
     [SerializeField] public float absolutePoints = 0;
     [SerializeField] public float maxTimeLVL1 = 0;
+    [SerializeField] public int grafittisLVL1 = 0;
+    [SerializeField] public int maxGrafLVL1 = 0;
     [SerializeField] public float maxTimeLVL2 = 0;
+    [SerializeField] public int grafittisLVL2 = 0;
+    [SerializeField] public int maxGrafLVL2 = 0;
     [SerializeField] public float maxTimeLVL3 = 0;
+    [SerializeField] public int grafittisLVL3 = 0;
+    [SerializeField] public int maxGrafLVL3 = 0;
     [SerializeField] public bool haveRifle;
     [SerializeField] public bool haveShotgun;
 
@@ -129,6 +135,59 @@ public class PointRecorder : MonoBehaviour
 
             default:
                 return 0;
+        }
+    }
+
+    public void SetGraffittis(string level, int graffitisLvl, int graffitiMax)
+    {
+        switch (level)
+        {
+            case "LEVEL1":
+                if (graffitisLvl > grafittisLVL1)
+                {
+                    grafittisLVL1 = graffitisLvl;
+                }
+                maxGrafLVL1 = graffitiMax;
+            break;
+
+            case "LEVEL2":
+                if (graffitisLvl > grafittisLVL2)
+                {
+                    grafittisLVL2 = graffitisLvl;
+                }
+                maxGrafLVL2 = graffitiMax;
+            break;
+
+            case "LEVEL3":
+                if (graffitisLvl > grafittisLVL3)
+                {
+                    grafittisLVL3 = graffitisLvl;
+                }
+                maxGrafLVL3 = graffitiMax;
+            break;
+
+            default:
+            return;
+        }
+    }
+
+    public string GetGraffittis(string level)
+    {
+        string graffitText = "";
+
+        switch (level)
+        {
+            case "LEVEL1":
+                return graffitText = grafittisLVL1.ToString() + "/" + maxGrafLVL1.ToString();
+
+            case "LEVEL2":
+                return graffitText = grafittisLVL2.ToString() + "/" + maxGrafLVL2.ToString();
+
+            case "LEVEL3":
+                return graffitText = grafittisLVL3.ToString() + "/" + maxGrafLVL3.ToString();
+
+            default:
+                return "Not Found";
         }
     }
 }

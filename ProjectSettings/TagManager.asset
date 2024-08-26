@@ -12,6 +12,7 @@ TagManager:
   - Pistol
   - Rifle
   - Shotgun
+  - Graffitti
   layers:
   - Default
   - TransparentFX
