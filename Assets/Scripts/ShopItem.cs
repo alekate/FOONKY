@@ -20,7 +20,7 @@ public class ShopItem : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerOn && PointRecorder.Instance.absolutePoints >= cost) 
+        if (Input.GetMouseButtonDown(0) && playerOn && PointRecorder.Instance.absolutePoints >= cost) 
         {
             PointRecorder.Instance.DecreasePoints(cost);
             PointRecorder.Instance.BuyWeapon(tag);

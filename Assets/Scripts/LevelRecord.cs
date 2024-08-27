@@ -7,10 +7,13 @@ public class LevelRecord : MonoBehaviour
 {
     public TextMeshPro timeText; 
     public TextMeshPro graffittiText; 
+    public TextMeshPro enemiesText;
     public string level;
 
     void Start()
     {
+        enemiesText.text = PointRecorder.Instance.GetEnemies(level);
+        
         float lvlTime = PointRecorder.Instance.GetMaxTime(level);
         int minutes = Mathf.FloorToInt(lvlTime / 60);
         int seconds = Mathf.FloorToInt(lvlTime % 60);
@@ -22,5 +25,6 @@ public class LevelRecord : MonoBehaviour
         }
 
         graffittiText.text = PointRecorder.Instance.GetGraffittis(level);
+
     }
 }

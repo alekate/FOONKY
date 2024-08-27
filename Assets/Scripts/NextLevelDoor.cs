@@ -61,8 +61,7 @@ public class NextLevelDoor : MonoBehaviour
 
             // datos guardados
             PointRecorder.Instance.AddPoints(pointSystem.countPoints);
-            PointRecorder.Instance.VerifyMaxTime(timer.ElapsedTime);
-            PointRecorder.Instance.SetGraffittis(currentSceneName, pointSystem.graffitiCount, pointSystem.graffitiTotal);
+            PointRecorder.Instance.SetLevelStats(currentSceneName, pointSystem.graffitiCount, pointSystem.graffitiTotal, timer.ElapsedTime, pointSystem.totalKills, pointSystem.enemyTotal);
             maxTimeLVL1Text.text = FormatTime(pointRecorder.maxTimeLVL1);
 
             gamePlayUI.SetActive(false);

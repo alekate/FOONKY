@@ -42,8 +42,13 @@ public class ItemPickup : MonoBehaviour
                 other.GetComponent<Backpack>().GiveKey(typeAmmo, this.gameObject);
             }
 
-            pickUpSound.Play();
+            
 
         }    
+    }
+
+    private void OnDestroy() 
+    {
+        pickUpSound.Play();
     }
 }

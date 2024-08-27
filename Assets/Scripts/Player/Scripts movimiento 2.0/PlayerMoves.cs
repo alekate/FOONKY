@@ -108,8 +108,11 @@ public class PlayerMoves : MonoBehaviour
     {
       if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-         audioSource.Play();
-
+            audioSource.Play();
+        }
+        else
+        {
+            audioSource.Stop();
         }
 
     }

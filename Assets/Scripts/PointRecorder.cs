@@ -18,6 +18,12 @@ public class PointRecorder : MonoBehaviour
     [SerializeField] public float maxTimeLVL3 = 0;
     [SerializeField] public int grafittisLVL3 = 0;
     [SerializeField] public int maxGrafLVL3 = 0;
+    [SerializeField] public int enemyCount1 = 0;
+    [SerializeField] public int totalEnemies1 = 0;
+    [SerializeField] public int enemyCount2 = 0;
+    [SerializeField] public int totalEnemies2 = 0;
+    [SerializeField] public int enemyCount3 = 0;
+    [SerializeField] public int totalEnemies3 = 0;
     [SerializeField] public bool haveRifle;
     [SerializeField] public bool haveShotgun;
 
@@ -34,23 +40,8 @@ public class PointRecorder : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
-
-        //UpdatePointText();
     }
 
-    private void Update()
-    {
-        //UpdatePointText();
-    }
-
-    /*private void UpdatePointText()
-    {
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        if (currentSceneName == "HIDEOUT")
-        {
-            pointText.text = absolutePoints.ToString();
-        }
-    }*/
 
     public void AddPoints(float levelPoints)
     {
@@ -87,36 +78,69 @@ public class PointRecorder : MonoBehaviour
         haveShotgun = true;
     }
 
-    public void VerifyMaxTime(float levelTime)
+    public void SetLevelStats(string level, int graffitisLvl, int graffitiMax, float levelTime, int enemyKilled, int totalEnemies)
     {
-        string currentSceneName = SceneManager.GetActiveScene().name;
-
-        switch (currentSceneName)
+        switch (level)
         {
             case "LEVEL1":
+                if (graffitisLvl > grafittisLVL1)
+                {
+                    grafittisLVL1 = graffitisLvl;
+                }
+                maxGrafLVL1 = graffitiMax;
+
                 if (levelTime < maxTimeLVL1)
                 {
                     maxTimeLVL1 = levelTime;
                 }
-                break;
+
+                if (enemyKilled > enemyCount1)
+                {
+                    enemyCount1 = enemyKilled;
+                }
+                totalEnemies1 = totalEnemies;
+            break;
 
             case "LEVEL2":
+                if (graffitisLvl > grafittisLVL2)
+                {
+                    grafittisLVL2 = graffitisLvl;
+                }
+                maxGrafLVL2 = graffitiMax;
+
                 if (levelTime < maxTimeLVL2)
                 {
                     maxTimeLVL2 = levelTime;
                 }
-                break;
+
+                if (enemyKilled > enemyCount2)
+                {
+                    enemyCount2 = enemyKilled;
+                }
+                totalEnemies2 = totalEnemies;
+            break;
 
             case "LEVEL3":
+                if (graffitisLvl > grafittisLVL3)
+                {
+                    grafittisLVL3 = graffitisLvl;
+                }
+                maxGrafLVL3 = graffitiMax;
+
                 if (levelTime < maxTimeLVL3)
                 {
                     maxTimeLVL3 = levelTime;
                 }
-                break;
+
+                if (enemyKilled > enemyCount3)
+                {
+                    enemyCount3 = enemyKilled;
+                }
+                totalEnemies3 = totalEnemies;
+            break;
 
             default:
-                Debug.Log("nivel no encontrado");
-                break;
+            return;
         }
     }
 
@@ -135,39 +159,6 @@ public class PointRecorder : MonoBehaviour
 
             default:
                 return 0;
-        }
-    }
-
-    public void SetGraffittis(string level, int graffitisLvl, int graffitiMax)
-    {
-        switch (level)
-        {
-            case "LEVEL1":
-                if (graffitisLvl > grafittisLVL1)
-                {
-                    grafittisLVL1 = graffitisLvl;
-                }
-                maxGrafLVL1 = graffitiMax;
-            break;
-
-            case "LEVEL2":
-                if (graffitisLvl > grafittisLVL2)
-                {
-                    grafittisLVL2 = graffitisLvl;
-                }
-                maxGrafLVL2 = graffitiMax;
-            break;
-
-            case "LEVEL3":
-                if (graffitisLvl > grafittisLVL3)
-                {
-                    grafittisLVL3 = graffitisLvl;
-                }
-                maxGrafLVL3 = graffitiMax;
-            break;
-
-            default:
-            return;
         }
     }
 
@@ -190,5 +181,26 @@ public class PointRecorder : MonoBehaviour
                 return "Not Found";
         }
     }
+
+    public string GetEnemies(string level)
+    {
+        string enemiesText = "";
+
+        switch (level)
+        {
+            case "LEVEL1": 
+                return enemiesText = enemyCount1.ToString() + "/" + totalEnemies1.ToString();
+
+            case "LEVEL2":
+                return enemiesText = enemyCount2.ToString() + "/" + totalEnemies2.ToString();
+
+            case "LEVEL3":
+                return enemiesText = enemyCount3.ToString() + "/" + totalEnemies3.ToString();
+
+            default:
+                return "Not Found";
+        }
+    }
+
 }
 

@@ -10,6 +10,7 @@ public class PointSystem : MonoBehaviour
     public int shotgunKill;
     public int rifleKill;
     public int totalKills;
+    public int enemyTotal;
     public int graffitiCount;
     public int graffitiTotal;
     public int deathCount;
@@ -23,6 +24,13 @@ public class PointSystem : MonoBehaviour
         foreach (GameObject graffitti in graffittis)
         {
            graffitiTotal++;
+        }
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("TVFly");
+
+        foreach (GameObject enemy in enemies)
+        {
+           enemyTotal++;
         }
     }
 

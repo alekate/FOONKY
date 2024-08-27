@@ -10,6 +10,7 @@ public class Sliding : MonoBehaviour
     private Rigidbody rb;
     private PlayerMoves pm;
     public MoveCamera cam;
+    [SerializeField] private AudioSource audioSource;
 
     [Header("Sliding")]
     public float maxSlideTime;

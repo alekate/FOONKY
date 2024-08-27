@@ -13,6 +13,7 @@ TagManager:
   - Rifle
   - Shotgun
   - Graffitti
+  - TVFly
   layers:
   - Default
   - TransparentFX
