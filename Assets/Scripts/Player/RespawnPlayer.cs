@@ -2,29 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Respawn : MonoBehaviour
+namespace EasyTransition
 {
-    private PlayerHealth playerHealth;
-
-    public Transform spawnPoint;
-
-    private void Start()
+    public class Respawn : MonoBehaviour
     {
-        // Initialize playerHealth by finding the PlayerHealth component in the parent or elsewhere in the hierarchy
-        playerHealth = GetComponentInParent<PlayerHealth>();
+        public TransitionSettings transition;
 
-        // If you want to find PlayerHealth from another object, you can do so:
-        // playerHealth = GameObject.Find("Player").GetComponent<PlayerHealth>();
-    }
+        private TransitionManager manager;
+        private PlayerHealth playerHealth;
 
-    private void OnTriggerEnter(Collider other) 
-    {
-        if (other.gameObject.CompareTag("Respawn"))
+        public Transform spawnPoint;
+
+        private bool isRespawning = false; // Flag to track if the player is respawning
+
+        private void Start()
         {
-            transform.position = spawnPoint.position;
+            manager = TransitionManager.Instance();
+            playerHealth = GetComponentInParent<PlayerHealth>();
+        }
 
-            // Call the DamagePlayer method to decrease the player's health
-            playerHealth.DamagePlayer(30, "Fall"); // Assuming you want to deal 30 damage
-        }    
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Respawn") && !isRespawning)
+            {
+                // Start the respawn process only if not already respawning
+                isRespawning = true;
+
+                // Trigger the transition with the correct TransitionSettings object
+                manager.Transition(transition, 0f); // Use the transition object
+
+                // Respawn the player after a delay to match the transition time
+                StartCoroutine(RespawnPlayer());
+            }
+        }
+
+        private IEnumerator RespawnPlayer()
+        {
+            yield return new WaitForSeconds(0.9f); // Match transition time delay
+            transform.position = spawnPoint.position;
+            playerHealth.DamagePlayer(30, "Fall");
+
+            // Allow respawn again after it's completed
+            isRespawning = false;
+        }
     }
 }
