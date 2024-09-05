@@ -21,6 +21,18 @@ namespace EasyTransition
             playerHealth = GetComponentInParent<PlayerHealth>();
         }
 
+        private void Update()
+        {
+            // Check if the "R" key is pressed and the player is not already respawning
+            if (Input.GetKeyDown(KeyCode.R) && !isRespawning)
+            {
+                // Trigger the respawn process
+                isRespawning = true;
+                manager.Transition(transition, 0f); // Use the transition object
+                StartCoroutine(RespawnPlayer());
+            }
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Respawn") && !isRespawning)
