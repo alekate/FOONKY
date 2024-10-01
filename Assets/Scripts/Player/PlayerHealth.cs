@@ -87,7 +87,8 @@ public class PlayerHealth : MonoBehaviour
         else
         {
             health -= damage;
-            lifesistemslider.SetHealth(health);
+            Debug.Log("sape");
+            //lifesistemslider.SetHealth(health);
         }
 
         if (health <= 0) // muelte pj
@@ -98,7 +99,6 @@ public class PlayerHealth : MonoBehaviour
             }
             pointSystem.deathCount++;
 
-            Debug.Log("U Ded haha");
             GameOver(attacker);
             transform.position = spawnPoint.position;
             health = 100;
