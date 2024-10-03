@@ -2,53 +2,56 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemPickup : MonoBehaviour
+namespace EasyTransition
 {
-    public AudioSource pickUpSound;
-    public bool isHealth;
-    public bool isArmor;
-    public bool isAmmo;
-    public string typeAmmo;
-    public bool isKey;
-    public int amount;
-
-    void Start ()
+    public class ItemPickup : MonoBehaviour
     {
-        pickUpSound = GetComponent<AudioSource>();
-    }
+        public AudioSource pickUpSound;
+        public bool isHealth;
+        public bool isArmor;
+        public bool isAmmo;
+        public string typeAmmo;
+        public bool isKey;
+        public int amount;
 
-    void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Player"))
+        void Start ()
         {
-            if(isHealth)
-            {
-                other.GetComponent<PlayerHealth>().GiveHealth(amount, this.gameObject);
-            }
+            pickUpSound = GetComponent<AudioSource>();
+        }
 
-            if(isArmor)
+        void OnTriggerEnter(Collider other)
+        {
+            if(other.CompareTag("Player"))
             {
-                other.GetComponent<PlayerHealth>().GiveArmor(amount, this.gameObject);
-            }
+                if(isHealth)
+                {
+                    other.GetComponent<PlayerHealth>().GiveHealth(amount, this.gameObject);
+                }
 
-            if(isAmmo)
-            {
-                other.GetComponent<Backpack>().GiveAmmo(amount, typeAmmo, this.gameObject);
-                other.GetComponentInChildren<Gun>().BulletFind();
-            }
+                if(isArmor)
+                {
+                    other.GetComponent<PlayerHealth>().GiveArmor(amount, this.gameObject);
+                }
 
-            if(isKey)
-            {
-                other.GetComponent<Backpack>().GiveKey(typeAmmo, this.gameObject);
-            }
+                if(isAmmo)
+                {
+                    other.GetComponent<Backpack>().GiveAmmo(amount, typeAmmo, this.gameObject);
+                    other.GetComponentInChildren<Gun>().BulletFind();
+                }
+
+                if(isKey)
+                {
+                    other.GetComponent<Backpack>().GiveKey(typeAmmo, this.gameObject);
+                }
 
             
 
-        }    
-    }
+            }    
+        }
 
-    private void OnDestroy() 
-    {
-        pickUpSound.Play();
+        private void OnDestroy() 
+        {
+            pickUpSound.Play();
+        }
     }
 }
