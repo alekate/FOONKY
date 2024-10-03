@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace EasyTransition
 {
@@ -9,11 +10,14 @@ namespace EasyTransition
         public TransitionSettings transition;
 
         private TransitionManager manager;
+
         private PlayerHealth playerHealth;
 
         public Transform spawnPoint;
 
-        private bool isRespawning = false; // Flag to track if the player is respawning
+        private bool isRespawning = false;
+
+        private bool TeleportPlayer = false;
 
         private void Start()
         {
@@ -21,15 +25,26 @@ namespace EasyTransition
             playerHealth = GetComponentInParent<PlayerHealth>();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
-            // Check if the "R" key is pressed and the player is not already respawning
             if (Input.GetKeyDown(KeyCode.R) && !isRespawning)
             {
-                // Trigger the respawn process
                 isRespawning = true;
-                manager.Transition(transition, 0f); // Use the transition object
-                StartCoroutine(RespawnPlayer());
+
+                manager.Transition(transition, 0f);
+
+                StartCoroutine(rWasPressed());
+            }
+
+            if (TeleportPlayer == true)
+            {
+                transform.position = spawnPoint.position;
+
+                playerHealth.DamagePlayer(30, "Fall");
+
+                isRespawning = false;
+
+                TeleportPlayer = false;
             }
         }
 
@@ -37,24 +52,24 @@ namespace EasyTransition
         {
             if (other.gameObject.CompareTag("Respawn") && !isRespawning)
             {
-                // Start the respawn process only if not already respawning
-                isRespawning = true;
-
-                // Trigger the transition with the correct TransitionSettings object
-                manager.Transition(transition, 0f); // Use the transition object
-
-                // Respawn the player after a delay to match the transition time
                 StartCoroutine(RespawnPlayer());
             }
+
         }
 
         private IEnumerator RespawnPlayer()
         {
-            yield return new WaitForSeconds(0.9f); // Match transition time delay
-            transform.position = spawnPoint.position;
-            playerHealth.DamagePlayer(30, "Fall");
+            manager.Transition(transition, 0f);
 
-            // Allow respawn again after it's completed
+            yield return new WaitForSeconds(1f);
+
+            TeleportPlayer = true;
+        }
+
+        private IEnumerator rWasPressed()
+        {
+            yield return new WaitForSeconds(1f);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             isRespawning = false;
         }
     }

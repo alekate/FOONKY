@@ -7,171 +7,215 @@ using Unity.Services.Analytics;
 using Unity.Services.Core;
 using UnityEngine.UI;
 
-public class PlayerHealth : MonoBehaviour
+namespace EasyTransition
 {
-   // [SerializeField] private TextMeshProUGUI healthUI;
-   //[SerializeField] private TextMeshProUGUI armorUI;
-    private PointSystem pointSystem;
-    public Transform spawnPoint;
-
-    public int maxHealth;
-    public int health;
-
-    public int maxArmor;
-    public int armor;
-
-    public LifeSistemSlider lifesistemslider;
-    public ArmorSistemSlider armorsistemslider;
-
-    private void Awake() 
+    public class PlayerHealth : MonoBehaviour
     {
-        health = maxHealth;
-        pointSystem = FindObjectOfType<PointSystem>();
-    }
-    
-    async void Start()
-    {
-        await UnityServices.InitializeAsync();
-        LevelStart();
-        lifesistemslider.SetMaxHealth(maxHealth);
-        armorsistemslider.SetMaxArmor(maxArmor);
-    }
+        public TransitionSettings transition;
 
-    // Update is called once per frame
-    void Update()
-    {
-        /*if(Input.GetKeyDown(KeyCode.Q))
+        private TransitionManager manager;
+
+        private PointSystem pointSystem;
+
+        public Transform spawnPoint;
+
+        public int maxHealth;
+        public int health = 100;
+        public bool playerDead = false;
+
+        public int maxArmor;
+        public int armor = 0;
+
+        public LifeSistemSlider lifesistemslider;
+        public ArmorSistemSlider armorsistemslider;
+
+        public bool hit = false;
+        public GameObject playerHurtGameObject;
+
+        private void Awake() 
         {
-            DamagePlayer(30);
-            Debug.Log("ouch");
-        }*/
-
-       // healthUI.text = health.ToString();
-	   //armorUI.text = armor.ToString();
-
-    }
-
-    public void LoseHealthBar()
-    {
-        lifesistemslider.SetHealth(health);
-    }
-
-    public void LoseArmorhBar()
-    {
-        armorsistemslider.SetArmor(armor);
-    }
+            health = maxHealth;
+            pointSystem = FindObjectOfType<PointSystem>();
+        }
     
-    public void DamagePlayer(int damage, string attacker)
-    {
-        if(armor > 0) //verifica si hay armor
+        async void Start()
         {
+            await UnityServices.InitializeAsync();
+            LevelStart();
+            lifesistemslider.SetMaxHealth(maxHealth);
+            armorsistemslider.SetArmor(armor);
 
-            if(armor >= damage)
+            playerHurtGameObject.SetActive(false);
+
+            manager = TransitionManager.Instance();
+        }
+
+        void FixedUpdate()
+        {
+            if (playerDead == true)
             {
-                armor -= damage;
+                transform.position = spawnPoint.position;
+            
+                health = 100;
+
+                lifesistemslider.SetHealth(health);
                 armorsistemslider.SetArmor(armor);
+
+                playerDead = false; 
             }
-            else if (armor < damage) //si el daño recibido es mayor a la amradura, romper la armadura y hacer el restante daño a la vida
+        }
+
+        private IEnumerator RespawnPlayer()
+        {
+            manager.Transition(transition, 0f);
+
+            yield return new WaitForSeconds(1f);
+
+            playerDead = true;
+        }
+
+        public void LoseHealthBar()
+        {
+            lifesistemslider.SetHealth(health);
+        }
+
+        public void LoseArmorhBar()
+        {
+            armorsistemslider.SetArmor(armor);
+        }
+    
+        public void DamagePlayer(int damage, string attacker)
+        {
+            ShowDamageFeedback();
+
+            if (armor > 0) //verifica si hay armor
             {
-                int remainingDamage;
 
-                remainingDamage = damage - armor;
+                if(armor >= damage)
+                {
+                    armor -= damage;
+                    armorsistemslider.SetArmor(armor);
+                }
+                else if (armor < damage) //si el daño recibido es mayor a la amradura, romper la armadura y hacer el restante daño a la vida
+                {
+                    int remainingDamage;
 
-                armor = 0;
+                    remainingDamage = damage - armor;
 
-                health -= remainingDamage;
+                    armor = 0;
+
+                    health -= remainingDamage;
+                    lifesistemslider.SetHealth(health);
+                    armorsistemslider.SetArmor(armor);
+                }
+
+            }
+            else
+            {
+                health -= damage;
                 lifesistemslider.SetHealth(health);
             }
 
-        }
-        else
-        {
-            health -= damage;
-            Debug.Log("sape");
-            //lifesistemslider.SetHealth(health);
-        }
-
-        if (health <= 0) // muelte pj
-        {
-            if (attacker == "Fall")
+            if (health <= 0) // muelte pj
             {
-                pointSystem.deathFall++;
+                if (attacker == "Fall")
+                {
+                    pointSystem.deathFall++;
+                }
+                pointSystem.deathCount++;
+
+                Debug.Log("U Ded haha");
+                GameOver(attacker);
+
+                StartCoroutine(RespawnPlayer());
             }
-            pointSystem.deathCount++;
-
-            GameOver(attacker);
-            transform.position = spawnPoint.position;
-            health = 100;
-        }
         
+        }
+
+        public void GiveHealth(int amount, GameObject pickup)
+        {
+            if (health < maxHealth)
+            {
+                health += amount;
+                lifesistemslider.SetHealth(health);
+                Destroy(pickup);
+            }
+
+            if(health > maxHealth)
+            {
+                health = maxHealth;
+            }
+        
+        }
+
+        public void GiveArmor(int amount, GameObject pickup)
+        {
+            if(armor < maxArmor)
+            {
+                armor += amount;
+                armorsistemslider.SetArmor(armor);
+                Destroy(pickup);
+            }
+
+            if(armor > maxArmor)
+            {
+                armor = maxArmor;
+            }
+        
+        }
+
+        private void ShowDamageFeedback()
+        {
+            StartCoroutine(ShowDamageEffect());
+        }
+
+        private IEnumerator ShowDamageEffect()
+        {
+            // Activate the red image
+            playerHurtGameObject.SetActive(true);
+
+            // Wait for 0.5 seconds
+            yield return new WaitForSeconds(0.5f);
+
+            // Deactivate the red image
+            playerHurtGameObject.SetActive(false);
+        }
+
+        private void GameOver(string who)
+        {
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            Debug.Log("GameOverEvent");
+        
+            CustomEvent GameOverEvent = new CustomEvent("GameOverEvent")
+            {
+                { "deathCount", pointSystem.deathCount },
+                { "deathFall", pointSystem.deathFall },
+                { "enemyType", who },
+                { "levelIndex", currentSceneName }
+            };
+
+            // Record the event with AnalyticsService.Instance.CustomData
+            AnalyticsService.Instance.RecordEvent(GameOverEvent);
+            AnalyticsService.Instance.Flush();
+        }
+
+        private void LevelStart()
+        {
+
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            Debug.Log("nivel: " + currentSceneName);
+
+            Debug.Log("LevelStart");
+        
+            CustomEvent LevelStartEvent = new CustomEvent("LevelStartEvent")
+            {
+                { "levelIndex", currentSceneName }
+            };
+
+            // Record the event with AnalyticsService.Instance.CustomData
+            AnalyticsService.Instance.RecordEvent(LevelStartEvent);
+            AnalyticsService.Instance.Flush();
+        }
+
     }
-
-    public void GiveHealth(int amount, GameObject pickup)
-    {
-        if (health < maxHealth)
-        {
-            health += amount;
-            lifesistemslider.SetHealth(health);
-            Destroy(pickup);
-        }
-
-        if(health > maxHealth)
-        {
-            health = maxHealth;
-        }
-        
-    }
-
-    public void GiveArmor(int amount, GameObject pickup)
-    {
-        if(armor < maxArmor)
-        {
-            armor += amount;
-            armorsistemslider.SetArmor(armor);
-            Destroy(pickup);
-        }
-
-        if(armor > maxArmor)
-        {
-            armor = maxArmor;
-        }
-        
-    }  
-
-    private void GameOver(string who)
-    {
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        Debug.Log("GameOverEvent");
-        
-        CustomEvent GameOverEvent = new CustomEvent("GameOverEvent")
-        {
-            { "deathCount", pointSystem.deathCount },
-            { "deathFall", pointSystem.deathFall },
-            { "enemyType", who },
-            { "levelIndex", currentSceneName }
-        };
-
-        // Record the event with AnalyticsService.Instance.CustomData
-        AnalyticsService.Instance.RecordEvent(GameOverEvent);
-        AnalyticsService.Instance.Flush();
-    }
-
-    private void LevelStart()
-    {
-
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        Debug.Log("nivel: " + currentSceneName);
-
-        Debug.Log("LevelStart");
-        
-        CustomEvent LevelStartEvent = new CustomEvent("LevelStartEvent")
-        {
-            { "levelIndex", currentSceneName }
-        };
-
-        // Record the event with AnalyticsService.Instance.CustomData
-        AnalyticsService.Instance.RecordEvent(LevelStartEvent);
-        AnalyticsService.Instance.Flush();
-    }
-
 }
