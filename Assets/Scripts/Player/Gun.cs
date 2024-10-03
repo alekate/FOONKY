@@ -162,6 +162,14 @@ void Shoot()
             return;
         }
 
+        MeleeHealth melee = hit.transform.GetComponent<MeleeHealth>();
+        if (melee != null)
+        {
+            melee.TakeDamage(damage, tag);
+            Instantiate(bulletImpact, hit.point, Quaternion.LookRotation(hit.normal));
+            return;
+        }
+
         Instantiate(bulletImpact, hit.point, Quaternion.LookRotation(hit.normal));
 
     }

@@ -10,10 +10,18 @@ public class MeleeDamage : MonoBehaviour
     [SerializeField] float damageRange;
     [SerializeField] int damagePoints;
 
-    void Start()
+    private NavMesh navMesh;
+    private MaquinaEstados maquinaEstados;
+    public Animator enemyAnim;
+
+    private void OnEnable() 
     {
+        maquinaEstados = GetComponentInParent<MaquinaEstados>();
+        navMesh = GetComponentInParent<NavMesh>();
+        enemyAnim = GetComponent<Animator>();  
         canDealDamage = true;
-        hasDealDamage = false;    
+        hasDealDamage = false; 
+        enemyAnim.SetTrigger("ataque");
     }
 
     // Update is called once per frame
@@ -35,17 +43,12 @@ public class MeleeDamage : MonoBehaviour
     public void StartDealDamage()
     {
         canDealDamage = true;
-        hasDealDamage = false;
+        hasDealDamage = false; 
     }
 
     public void EndDealDamage()
     {
         canDealDamage = false;
-    }
-
-    private void OnDrawGizmos() 
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.position, transform.position + transform.forward * damageRange);   
+        maquinaEstados.ActivarEstado(maquinaEstados.EstadoPersecucion);
     }
 }

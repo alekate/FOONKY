@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\EasyTransitions\Scripts\TransitionSettings.cs" />
+     <Compile Include="Assets\Scripts\Enemy\D0G3\EnemyMelee.cs" />
      <Compile Include="Assets\Scripts\EasyTransitions\Scripts\TransitionManager.cs" />
      <Compile Include="Assets\Scripts\ShopItem.cs" />
      <Compile Include="Assets\Scripts\EasyTransitions\Scripts\CutoutMaskUI.cs" />
@@ -50,13 +51,13 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
-     <Compile Include="Assets\Scripts\Enemy\MeleeDamage.cs" />
      <Compile Include="Assets\Scripts\Player\Scripts movimiento 2.0\WallRunning.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
      <Compile Include="Assets\Scripts\Player\Scripts movimiento 2.0\Sliding.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyAI.cs" />
+     <Compile Include="Assets\Scripts\Enemy\D0G3\MeleePatrulla.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\Analytics\EventManager.cs" />
      <Compile Include="Assets\Scripts\Player\Gun.cs" />
@@ -67,6 +68,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
      <Compile Include="Assets\Scripts\AcensorScript.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
+     <Compile Include="Assets\Scripts\Enemy\D0G3\MeleeDamage.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
@@ -91,7 +93,6 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
      <Compile Include="Assets\Scripts\CartelPainted.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
-     <Compile Include="Assets\Scripts\Enemy\EnemyMelee.cs" />
      <Compile Include="Assets\Scripts\Enemy\Bullet.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
@@ -104,6 +105,7 @@
      <Compile Include="Assets\Scripts\Slider.cs" />
      <Compile Include="Assets\Scripts\Target.cs" />
      <Compile Include="Assets\Scripts\Player\Scripts movimiento 2.0\Dashing.cs" />
+     <Compile Include="Assets\Scripts\Enemy\D0G3\NavMesh.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
      <Compile Include="Assets\Scripts\PauseMenu.cs" />
@@ -115,8 +117,10 @@
      <Compile Include="Assets\Scripts\LevelRecord.cs" />
      <Compile Include="Assets\Scripts\Billboard.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
+     <Compile Include="Assets\Scripts\Enemy\D0G3\MaquinaEstados.cs" />
      <Compile Include="Assets\Scripts\BillboardPrefabs.cs" />
      <Compile Include="Assets\Scripts\Analytics\InitWithDefault.cs" />
+     <Compile Include="Assets\Scripts\Enemy\D0G3\MeleeHealth.cs" />
      <Compile Include="Assets\Scripts\Player\Scripts movimiento 2.0\MoveCamera.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyAwareness.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
