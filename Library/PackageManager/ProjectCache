@@ -250,6 +250,7 @@ m_ResolvedPackages:
     - 2.4.3
     - 2.4.4
     - 2.5.1
+    - 2.5.2
     compatible:
     - 2.0.5
     - 2.0.7
@@ -262,6 +263,7 @@ m_ResolvedPackages:
     - 2.4.3
     - 2.4.4
     - 2.5.1
+    - 2.5.2
     recommended: 2.0.7
     deprecated: []
   dependencies: []
@@ -481,6 +483,7 @@ m_ResolvedPackages:
     - 6.0.1
     - 6.0.2
     - 6.0.3
+    - 6.0.4
     compatible:
     - 5.1.0
     - 5.1.1
@@ -683,6 +686,7 @@ m_ResolvedPackages:
     - 5.1.0
     - 5.1.1
     - 6.0.1
+    - 6.0.2
     compatible:
     - 5.0.0
     - 5.0.1
@@ -690,6 +694,7 @@ m_ResolvedPackages:
     - 5.1.0
     - 5.1.1
     - 6.0.1
+    - 6.0.2
     recommended: 5.0.2
     deprecated: []
   dependencies:
