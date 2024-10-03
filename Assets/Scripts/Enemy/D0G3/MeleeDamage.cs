@@ -2,53 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeDamage : MonoBehaviour
-{
-    [SerializeField] bool canDealDamage;
-    [SerializeField] bool hasDealDamage;
 
-    [SerializeField] float damageRange;
-    [SerializeField] int damagePoints;
-
-    private NavMesh navMesh;
-    private MaquinaEstados maquinaEstados;
-    public Animator enemyAnim;
-
-    private void OnEnable() 
+namespace EasyTransition
+{ 
+    public class MeleeDamage : MonoBehaviour
     {
-        maquinaEstados = GetComponentInParent<MaquinaEstados>();
-        navMesh = GetComponentInParent<NavMesh>();
-        enemyAnim = GetComponent<Animator>();  
-        canDealDamage = true;
-        hasDealDamage = false; 
-        enemyAnim.SetTrigger("ataque");
-    }
+        [SerializeField] bool canDealDamage;
+        [SerializeField] bool hasDealDamage;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (canDealDamage && !hasDealDamage)
+        [SerializeField] float damageRange;
+        [SerializeField] int damagePoints;
+
+        private UnityEngine.AI.NavMeshAgent navMeshAgent;
+        private MaquinaEstados maquinaEstados;
+        public Animator enemyAnim;
+
+        private void OnEnable() 
         {
-            RaycastHit hit;
+            maquinaEstados = GetComponentInParent<MaquinaEstados>();
+            navMeshAgent = GetComponentInParent<UnityEngine.AI.NavMeshAgent>();
+            enemyAnim = GetComponent<Animator>();  
+            canDealDamage = true;
+            hasDealDamage = false; 
+            enemyAnim.SetTrigger("ataque");
+        }
 
-            if (Physics.Raycast(transform.position, transform.forward, out hit, damageRange))
+        // Update is called once per frame
+        void Update()
+        {
+            if (canDealDamage && !hasDealDamage)
             {
-                hasDealDamage = true;
-                PlayerHealth player = hit.transform.GetComponent<PlayerHealth>();
-                player.DamagePlayer(damagePoints, "D0g3");
+                RaycastHit hit;
+
+                if (Physics.Raycast(transform.position, transform.forward, out hit, damageRange))
+                {
+                    hasDealDamage = true;
+                    PlayerHealth player = hit.transform.GetComponent<PlayerHealth>();
+                    player.DamagePlayer(damagePoints, "D0g3");
+                }
             }
         }
-    }
 
-    public void StartDealDamage()
-    {
-        canDealDamage = true;
-        hasDealDamage = false; 
-    }
+        public void StartDealDamage()
+        {
+            canDealDamage = true;
+            hasDealDamage = false; 
+        }
 
-    public void EndDealDamage()
-    {
-        canDealDamage = false;
-        maquinaEstados.ActivarEstado(maquinaEstados.EstadoPersecucion);
+        public void EndDealDamage()
+        {
+            canDealDamage = false;
+            maquinaEstados.ActivarEstado(maquinaEstados.EstadoPersecucion);
+        }
     }
 }
