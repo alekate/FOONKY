@@ -1,8 +1,9 @@
-<<<<<<< Updated upstream
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{C99EB89A-9DC3-AF8F-8441-33569B0F75CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{917577BB-F57B-FBEF-375D-2D7CD854361A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{908C7A8E-56BC-0E6C-8CAB-51FF2ABD8AB8}"
 EndProject
@@ -16,6 +17,10 @@ Global
 		{C99EB89A-9DC3-AF8F-8441-33569B0F75CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C99EB89A-9DC3-AF8F-8441-33569B0F75CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C99EB89A-9DC3-AF8F-8441-33569B0F75CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{917577BB-F57B-FBEF-375D-2D7CD854361A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{917577BB-F57B-FBEF-375D-2D7CD854361A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{917577BB-F57B-FBEF-375D-2D7CD854361A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{917577BB-F57B-FBEF-375D-2D7CD854361A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{908C7A8E-56BC-0E6C-8CAB-51FF2ABD8AB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{908C7A8E-56BC-0E6C-8CAB-51FF2ABD8AB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{908C7A8E-56BC-0E6C-8CAB-51FF2ABD8AB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -24,32 +29,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-EndGlobal
-=======
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{C99EB89A-9DC3-AF8F-8441-33569B0F75CF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{908C7A8E-56BC-0E6C-8CAB-51FF2ABD8AB8}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C99EB89A-9DC3-AF8F-8441-33569B0F75CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C99EB89A-9DC3-AF8F-8441-33569B0F75CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C99EB89A-9DC3-AF8F-8441-33569B0F75CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C99EB89A-9DC3-AF8F-8441-33569B0F75CF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{908C7A8E-56BC-0E6C-8CAB-51FF2ABD8AB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{908C7A8E-56BC-0E6C-8CAB-51FF2ABD8AB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{908C7A8E-56BC-0E6C-8CAB-51FF2ABD8AB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{908C7A8E-56BC-0E6C-8CAB-51FF2ABD8AB8}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
->>>>>>> Stashed changes
