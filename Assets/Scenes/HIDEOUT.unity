@@ -16915,7 +16915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc81ca6fd37b79a4e8aac981ddb1bb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: LEVEL2
+  level: CINEMATIC2
 --- !u!1 &994928408
 GameObject:
   m_ObjectHideFlags: 0
@@ -19150,7 +19150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc81ca6fd37b79a4e8aac981ddb1bb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: LEVEL3
+  level: CINEMATIC3
 --- !u!65 &1198689432
 BoxCollider:
   m_ObjectHideFlags: 0
