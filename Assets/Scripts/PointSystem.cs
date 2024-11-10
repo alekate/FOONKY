@@ -27,8 +27,14 @@ public class PointSystem : MonoBehaviour
         }
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("TVFly");
+        GameObject[] melee = GameObject.FindGameObjectsWithTag("EnemyTag");
 
         foreach (GameObject enemy in enemies)
+        {
+           enemyTotal++;
+        }
+
+        foreach (GameObject enemy in melee)
         {
            enemyTotal++;
         }

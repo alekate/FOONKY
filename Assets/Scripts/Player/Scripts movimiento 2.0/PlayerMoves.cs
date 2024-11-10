@@ -46,7 +46,7 @@ public class PlayerMoves : MonoBehaviour
     private RaycastHit slopeHit;
     private bool exitingSlope;
 
-    [Header ("Audio")]
+    [Header("Audio")]
     [SerializeField] private AudioSource audioSource;
 
 
@@ -85,6 +85,9 @@ public class PlayerMoves : MonoBehaviour
         startYScale = transform.localScale.y;
 
         audioSource = GetComponent<AudioSource>();
+
+        Application.targetFrameRate = 60;
+
     }
 
     private void Update()
@@ -104,9 +107,9 @@ public class PlayerMoves : MonoBehaviour
             rb.drag = 0;
     }
 
-    public void Auido () 
+    public void Auido()
     {
-      if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             audioSource.Play();
         }
@@ -260,7 +263,7 @@ public class PlayerMoves : MonoBehaviour
         moveSpeed = desiredMoveSpeed;
         speedChangeFactor = 1f;
         keepMomentum = false;
-        
+
     }
 
     private void MovePlayer()
@@ -318,7 +321,7 @@ public class PlayerMoves : MonoBehaviour
         {
             rb.velocity = new Vector3(rb.velocity.x, maxYSpeed, rb.velocity.z);
         }
-            
+
     }
 
     private void Jump()
