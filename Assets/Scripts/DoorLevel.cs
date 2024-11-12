@@ -17,6 +17,8 @@ public class DoorLevel : MonoBehaviour
     void Start()
     {
         //manager = TransitionManager.Instance();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void OnCollisionEnter(Collision other)
