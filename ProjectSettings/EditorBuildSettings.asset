@@ -12,36 +12,27 @@ EditorBuildSettings:
     path: Assets/Scenes/Analytics.unity
     guid: 6511ac4264e2b07448bc00076d5cf6c6
   - enabled: 1
+    path: Assets/Scenes/Cinematica/CINEMATIC.unity
+    guid: cd03afed6b972c242b310d8e06edd614
+  - enabled: 1
     path: Assets/Scenes/LEVEL1/LEVEL1.unity
     guid: 6d9a1d0381abdde46b281bb81405323d
   - enabled: 1
-<<<<<<< Updated upstream
-    path: Assets/Scenes/LEVEL2.unity
-    guid: 3e351c11cf2018d40af78fd951b47cfe
-  - enabled: 1
-=======
     path: Assets/Scenes/Cinematica/CINEMATIC2.unity
-    guid: 783620fc31781044f99cb410df25e26c
+    guid: 512520da7f97c7a43837cf0a6432efb7
   - enabled: 1
     path: Assets/Scenes/LEVEL2/LEVEL2.unity
     guid: 3e351c11cf2018d40af78fd951b47cfe
   - enabled: 1
     path: Assets/Scenes/Cinematica/CINEMATIC3.unity
-    guid: 42ca4f21a1813e84f856b26debe01349
+    guid: 29239d79a3471495e9d270601006dad7
   - enabled: 1
     path: Assets/Scenes/LEVEL3/LEVEL3.unity
     guid: cd1ebacca3dfe6d4f9ea024240543d92
   - enabled: 1
->>>>>>> Stashed changes
-    path: Assets/Scenes/CREDITS.unity
-    guid: 467818468ad08724e825314d726177b6
-  - enabled: 1
     path: Assets/Scenes/HIDEOUT.unity
     guid: 8a2a41a5cf7239748ab7cc3c2453085a
   - enabled: 1
-    path: Assets/Scenes/Cinematica/CINEMATIC.unity
-    guid: cd03afed6b972c242b310d8e06edd614
-  - enabled: 0
-    path: Assets/Scenes/DEMO LEVEL.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/CREDITS.unity
+    guid: 467818468ad08724e825314d726177b6
   m_configObjects: {}

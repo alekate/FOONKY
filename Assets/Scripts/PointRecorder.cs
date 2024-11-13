@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//using TMPro;
+using TMPro;
 
 public class PointRecorder : MonoBehaviour
 {
@@ -27,7 +27,7 @@ public class PointRecorder : MonoBehaviour
     [SerializeField] public bool haveRifle;
     [SerializeField] public bool haveShotgun;
 
-   // public TextMeshProUGUI pointText;
+    public TextMeshProUGUI pointText;
 
     private void Awake()
     {
@@ -40,19 +40,21 @@ public class PointRecorder : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
+
+        UpdatePointText();
     }
 
 
     public void AddPoints(float levelPoints)
     {
         absolutePoints += levelPoints;
-        //UpdatePointText();
+        UpdatePointText();
     }
 
     public void DecreasePoints(float levelPoints)
     {
         absolutePoints -= levelPoints;
-        //UpdatePointText();
+        UpdatePointText();
     }
 
     public void BuyWeapon(string type)
@@ -200,6 +202,11 @@ public class PointRecorder : MonoBehaviour
             default:
                 return "Not Found";
         }
+    }
+
+    public void UpdatePointText()
+    {
+        pointText.text = absolutePoints.ToString();
     }
 
 }
