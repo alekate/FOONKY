@@ -416,6 +416,8 @@
 "Assets/Scripts/Player/WeaponSwitching.cs"
 "Assets/Scripts/PointRecorder.cs"
 "Assets/Scripts/PointSystem.cs"
+"Assets/Scripts/PP_PointRecorder/Activator.cs"
+"Assets/Scripts/PP_PointRecorder/PP_PointRecorder.cs"
 "Assets/Scripts/ShopItem.cs"
 "Assets/Scripts/ShopSystem.cs"
 "Assets/Scripts/ShowPoints.cs"

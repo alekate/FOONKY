@@ -20,10 +20,10 @@ public class ShopItem : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && playerOn && PointRecorder.Instance.absolutePoints >= cost) 
+        if (Input.GetMouseButtonDown(0) && playerOn && PP_PointRecorder.Instance.absolutePoints >= cost) 
         {
-            PointRecorder.Instance.DecreasePoints(cost);
-            PointRecorder.Instance.BuyWeapon(tag);
+            PP_PointRecorder.Instance.DecreasePoints(cost);
+            PP_PointRecorder.Instance.BuyWeapon(tag);
             Debug.Log("comprado");
             Destroy(this.gameObject);
         }

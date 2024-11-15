@@ -53,13 +53,13 @@ public class WeaponSwitching : MonoBehaviour
             selectedWeapon = 0; 
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2) && transform.childCount >= 2 && PointRecorder.Instance.haveShotgun) //se agrega la segunda condicon para ver si existe un segundo objeto q sea hijo 
+        if (Input.GetKeyDown(KeyCode.Alpha2) && transform.childCount >= 2 && PP_PointRecorder.Instance.haveShotgun) //se agrega la segunda condicon para ver si existe un segundo objeto q sea hijo 
         {
             selectedWeapon = 1;
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3) && transform.childCount >= 3 && PointRecorder.Instance.haveRifle)
+        if (Input.GetKeyDown(KeyCode.Alpha3) && transform.childCount >= 3 && PP_PointRecorder.Instance.haveRifle)
         {
             selectedWeapon = 2;
         }
@@ -82,7 +82,7 @@ public class WeaponSwitching : MonoBehaviour
             break;
 
             case 1:
-                if (PointRecorder.Instance.haveShotgun)
+                if (PP_PointRecorder.Instance.haveShotgun)
                 {
                     weaponUI2.SetActive(true);
                     weaponUI1.SetActive(false);
@@ -96,7 +96,7 @@ public class WeaponSwitching : MonoBehaviour
             break;
 
             case 2:
-                if (PointRecorder.Instance.haveRifle)
+                if (PP_PointRecorder.Instance.haveRifle)
                 {
                     weaponUI3.SetActive(true);
                     weaponUI1.SetActive(false);

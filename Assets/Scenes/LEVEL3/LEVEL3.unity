@@ -196381,6 +196381,83 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &779188958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 779188961}
+  - component: {fileID: 779188960}
+  - component: {fileID: 779188959}
+  m_Layer: 0
+  m_Name: PP_PointRecorder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &779188959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779188958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e995774fb05be341ad899fd6f706a6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptToActive: {fileID: 779188960}
+--- !u!114 &779188960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779188958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed9ed92b33176274c9217449c3a0c93e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  absolutePoints: 0
+  maxTimeLVL1: 0
+  grafittisLVL1: 0
+  maxGrafLVL1: 0
+  maxTimeLVL2: 0
+  grafittisLVL2: 0
+  maxGrafLVL2: 0
+  maxTimeLVL3: 0
+  grafittisLVL3: 0
+  maxGrafLVL3: 0
+  enemyCount1: 0
+  totalEnemies1: 0
+  enemyCount2: 0
+  totalEnemies2: 0
+  enemyCount3: 0
+  totalEnemies3: 0
+  haveRifle: 0
+  haveShotgun: 0
+  pointText: {fileID: 1535847188}
+--- !u!4 &779188961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779188958}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -155.64728, y: -51.369797, z: 69.58619}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &781112608
 GameObject:
   m_ObjectHideFlags: 0
@@ -547262,69 +547339,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2143679594}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1 &2004633583
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2004633585}
-  - component: {fileID: 2004633584}
-  m_Layer: 0
-  m_Name: PointRecorder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2004633584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2004633583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb7ef3d40e1903646a075bfe49aa4a32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  absolutePoints: 0
-  maxTimeLVL1: 100000
-  grafittisLVL1: 0
-  maxGrafLVL1: 0
-  maxTimeLVL2: 100000
-  grafittisLVL2: 0
-  maxGrafLVL2: 0
-  maxTimeLVL3: 100000
-  grafittisLVL3: 0
-  maxGrafLVL3: 0
-  enemyCount1: 0
-  totalEnemies1: 0
-  enemyCount2: 0
-  totalEnemies2: 0
-  enemyCount3: 0
-  totalEnemies3: 0
-  haveRifle: 0
-  haveShotgun: 0
-  pointText: {fileID: 1535847188}
---- !u!4 &2004633585
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2004633583}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -97.1173, y: -7.7110844, z: 14.333964}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2005065570
 GameObject:
   m_ObjectHideFlags: 0
@@ -578687,7 +578701,6 @@ SceneRoots:
   - {fileID: 738771714}
   - {fileID: 1058390777}
   - {fileID: 641949377}
-  - {fileID: 2004633585}
   - {fileID: 234298334}
   - {fileID: 1252277534}
   - {fileID: 816325731}
@@ -578696,3 +578709,4 @@ SceneRoots:
   - {fileID: 1359745062}
   - {fileID: 1308097426}
   - {fileID: 2102095567}
+  - {fileID: 779188961}

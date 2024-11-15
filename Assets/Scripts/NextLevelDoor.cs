@@ -15,7 +15,7 @@ public class NextLevelDoor : MonoBehaviour
     public static bool GameIsPaused = false;
     private PointSystem pointSystem;
     private Timer timer;
-    private PointRecorder pointRecorder;
+    private PP_PointRecorder pointRecorder;
     string currentSceneName;
 
     [SerializeField] private TextMeshProUGUI graffitiCountText;
@@ -30,7 +30,6 @@ public class NextLevelDoor : MonoBehaviour
     {
         pointSystem = FindObjectOfType<PointSystem>();
         timer = FindObjectOfType<Timer>();
-        pointRecorder = FindObjectOfType<PointRecorder>();
         currentSceneName = SceneManager.GetActiveScene().name;
         // Initialize Unity services
         await UnityServices.InitializeAsync();
@@ -48,7 +47,7 @@ public class NextLevelDoor : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            graffitiCountText.text = pointSystem.graffitiCount.ToString() + "/" + pointSystem.graffitiTotal.ToString();
+            graffitiCountText.text = pointSystem.graffitiCount.ToString() + " / " + pointSystem.graffitiTotal.ToString();
             rifleKillsText.text = pointSystem.rifleKill.ToString();
             shotgunKillsText.text = pointSystem.shotgunKill.ToString();
             pistolKillsText.text = pointSystem.pistolKill.ToString();
@@ -60,9 +59,10 @@ public class NextLevelDoor : MonoBehaviour
 
 
             // datos guardados
-            PointRecorder.Instance.AddPoints(pointSystem.countPoints);
-            PointRecorder.Instance.SetLevelStats(currentSceneName, pointSystem.graffitiCount, pointSystem.graffitiTotal, timer.ElapsedTime, pointSystem.totalKills, pointSystem.enemyTotal);
-            maxTimeLVL1Text.text = FormatTime(pointRecorder.maxTimeLVL1);
+            PP_PointRecorder.Instance.AddPoints(pointSystem.countPoints);
+            PP_PointRecorder.Instance.SetLevelStats(currentSceneName, pointSystem.graffitiCount, pointSystem.graffitiTotal, timer.ElapsedTime, pointSystem.totalKills, pointSystem.enemyTotal);
+            float maxTime = PP_PointRecorder.Instance.maxTimeLVL1;
+            maxTimeLVL1Text.text = FormatTime(maxTime);
 
             gamePlayUI.SetActive(false);
             pauseMenuUI.SetActive(false);

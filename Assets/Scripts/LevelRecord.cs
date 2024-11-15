@@ -12,9 +12,9 @@ public class LevelRecord : MonoBehaviour
 
     void Start()
     {
-        enemiesText.text = PointRecorder.Instance.GetEnemies(level);
+        enemiesText.text = PP_PointRecorder.Instance.GetEnemies(level);
         
-        float lvlTime = PointRecorder.Instance.GetMaxTime(level);
+        float lvlTime = PP_PointRecorder.Instance.GetMaxTime(level);
         int minutes = Mathf.FloorToInt(lvlTime / 60);
         int seconds = Mathf.FloorToInt(lvlTime % 60);
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
@@ -24,7 +24,7 @@ public class LevelRecord : MonoBehaviour
             timeText.text = "No time";
         }
 
-        graffittiText.text = PointRecorder.Instance.GetGraffittis(level);
+        graffittiText.text = PP_PointRecorder.Instance.GetGraffittis(level);
 
     }
 }

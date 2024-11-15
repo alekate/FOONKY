@@ -7,8 +7,9 @@
           {
             "name": "NavMeshAgent",
             "scenes": [
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity"
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -16,8 +17,8 @@
           {
             "name": "NavMeshData",
             "scenes": [
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity"
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -38,11 +39,14 @@
             "name": "NavMeshSettings",
             "scenes": [
               "Assets/Scenes/Analytics.unity",
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC3.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 1,
@@ -56,8 +60,9 @@
           {
             "name": "Animation",
             "scenes": [
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity"
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -65,11 +70,13 @@
           {
             "name": "AnimationClip",
             "scenes": [
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 0,
@@ -78,11 +85,13 @@
           {
             "name": "Animator",
             "scenes": [
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 0,
@@ -91,11 +100,13 @@
           {
             "name": "AnimatorController",
             "scenes": [
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 1,
@@ -128,11 +139,13 @@
             "name": "AudioBehaviour",
             "scenes": [
               "Assets/Scenes/Analytics.unity",
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 0,
@@ -144,8 +157,9 @@
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 0,
@@ -155,11 +169,13 @@
             "name": "AudioListener",
             "scenes": [
               "Assets/Scenes/Analytics.unity",
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 0,
@@ -183,8 +199,9 @@
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 0,
@@ -196,8 +213,9 @@
               "Assets/Scenes/Analytics.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 1,
@@ -224,11 +242,13 @@
             "name": "Camera",
             "scenes": [
               "Assets/Scenes/Analytics.unity",
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 0,
@@ -250,11 +270,14 @@
             "name": "Cubemap",
             "scenes": [
               "Assets/Scenes/Analytics.unity",
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC3.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 0,
@@ -276,11 +299,14 @@
             "name": "EditorExtension",
             "scenes": [
               "Assets/Scenes/Analytics.unity",
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC3.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 1,
@@ -296,11 +322,13 @@
             "name": "GameObject",
             "scenes": [
               "Assets/Scenes/Analytics.unity",
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 0,
@@ -328,11 +356,14 @@
             "name": "LevelGameManager",
             "scenes": [
               "Assets/Scenes/Analytics.unity",
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC3.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 1,
@@ -342,11 +373,13 @@
             "name": "Light",
             "scenes": [
               "Assets/Scenes/Analytics.unity",
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 0,
@@ -362,8 +395,9 @@
             "name": "LightingSettings",
             "scenes": [
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity"
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -372,11 +406,14 @@
             "name": "LightmapSettings",
             "scenes": [
               "Assets/Scenes/Analytics.unity",
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC3.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 0,
@@ -398,11 +435,14 @@
             "name": "Material",
             "scenes": [
               "Assets/Scenes/Analytics.unity",
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC3.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 0,
@@ -412,8 +452,9 @@
             "name": "Mesh",
             "scenes": [
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity"
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -422,8 +463,9 @@
             "name": "MeshFilter",
             "scenes": [
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity"
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -432,8 +474,9 @@
             "name": "MeshRenderer",
             "scenes": [
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity"
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -442,11 +485,13 @@
             "name": "MonoBehaviour",
             "scenes": [
               "Assets/Scenes/Analytics.unity",
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 0,
@@ -462,11 +507,13 @@
             "name": "MonoScript",
             "scenes": [
               "Assets/Scenes/Analytics.unity",
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 1,
@@ -476,11 +523,14 @@
             "name": "NamedObject",
             "scenes": [
               "Assets/Scenes/Analytics.unity",
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC3.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 1,
@@ -514,11 +564,13 @@
             "name": "RectTransform",
             "scenes": [
               "Assets/Scenes/Analytics.unity",
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 0,
@@ -534,11 +586,14 @@
             "name": "RenderSettings",
             "scenes": [
               "Assets/Scenes/Analytics.unity",
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC3.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 0,
@@ -572,11 +627,14 @@
             "name": "Shader",
             "scenes": [
               "Assets/Scenes/Analytics.unity",
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC3.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 0,
@@ -598,11 +656,13 @@
             "name": "Sprite",
             "scenes": [
               "Assets/Scenes/Analytics.unity",
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 0,
@@ -617,10 +677,12 @@
           {
             "name": "SpriteRenderer",
             "scenes": [
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity"
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -871,8 +933,9 @@
             "name": "ParticleSystem",
             "scenes": [
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity"
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -881,8 +944,9 @@
             "name": "ParticleSystemRenderer",
             "scenes": [
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity"
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -896,8 +960,9 @@
             "name": "BoxCollider",
             "scenes": [
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity"
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -906,8 +971,9 @@
             "name": "CapsuleCollider",
             "scenes": [
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity"
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -922,8 +988,9 @@
             "name": "MeshCollider",
             "scenes": [
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity"
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -931,8 +998,10 @@
           {
             "name": "PhysicMaterial",
             "scenes": [
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity"
+              "Assets/Scenes/HIDEOUT.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -947,8 +1016,9 @@
             "name": "Rigidbody",
             "scenes": [
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity"
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -956,8 +1026,9 @@
           {
             "name": "SphereCollider",
             "scenes": [
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity"
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1253,11 +1324,13 @@
             "name": "Canvas",
             "scenes": [
               "Assets/Scenes/Analytics.unity",
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 0,
@@ -1273,11 +1346,13 @@
             "name": "CanvasRenderer",
             "scenes": [
               "Assets/Scenes/Analytics.unity",
-              "Assets/Scenes/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC.unity",
+              "Assets/Scenes/Cinematica/CINEMATIC2.unity",
               "Assets/Scenes/CREDITS.unity",
               "Assets/Scenes/HIDEOUT.unity",
-              "Assets/Scenes/LEVEL1.unity",
-              "Assets/Scenes/LEVEL2.unity",
+              "Assets/Scenes/LEVEL1/LEVEL1.unity",
+              "Assets/Scenes/LEVEL2/LEVEL2.unity",
+              "Assets/Scenes/LEVEL3/LEVEL3.unity",
               "Assets/Scenes/MENU.unity"
             ],
             "dependencyType": 0,

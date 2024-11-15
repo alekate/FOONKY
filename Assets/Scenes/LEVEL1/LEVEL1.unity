@@ -48525,7 +48525,7 @@ Transform:
   - {fileID: 35988416}
   - {fileID: 1263360788}
   - {fileID: 1301443460}
-  - {fileID: 1547800633}
+  - {fileID: 555504194}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &400497199
@@ -77418,6 +77418,83 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1345544598}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &555504192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 555504194}
+  - component: {fileID: 555504193}
+  - component: {fileID: 555504195}
+  m_Layer: 0
+  m_Name: PP_PointRecorder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &555504193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555504192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed9ed92b33176274c9217449c3a0c93e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  absolutePoints: 0
+  maxTimeLVL1: 0
+  grafittisLVL1: 0
+  maxGrafLVL1: 0
+  maxTimeLVL2: 0
+  grafittisLVL2: 0
+  maxGrafLVL2: 0
+  maxTimeLVL3: 0
+  grafittisLVL3: 0
+  maxGrafLVL3: 0
+  enemyCount1: 0
+  totalEnemies1: 0
+  enemyCount2: 0
+  totalEnemies2: 0
+  enemyCount3: 0
+  totalEnemies3: 0
+  haveRifle: 0
+  haveShotgun: 0
+  pointText: {fileID: 1166186522}
+--- !u!4 &555504194
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555504192}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.2483978, y: -20.122936, z: 6.2269897}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 399727487}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &555504195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555504192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e995774fb05be341ad899fd6f706a6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptToActive: {fileID: 555504193}
 --- !u!1 &561781442
 GameObject:
   m_ObjectHideFlags: 0
@@ -363608,69 +363685,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546769327}
   m_CullTransparentMesh: 1
---- !u!1 &1547800631
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1547800633}
-  - component: {fileID: 1547800632}
-  m_Layer: 0
-  m_Name: PointRecorder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1547800632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1547800631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb7ef3d40e1903646a075bfe49aa4a32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  absolutePoints: 0
-  maxTimeLVL1: 100000
-  grafittisLVL1: 0
-  maxGrafLVL1: 0
-  maxTimeLVL2: 100000
-  grafittisLVL2: 0
-  maxGrafLVL2: 0
-  maxTimeLVL3: 100000
-  grafittisLVL3: 0
-  maxGrafLVL3: 0
-  enemyCount1: 0
-  totalEnemies1: 0
-  enemyCount2: 0
-  totalEnemies2: 0
-  enemyCount3: 0
-  totalEnemies3: 0
-  haveRifle: 0
-  haveShotgun: 0
-  pointText: {fileID: 1166186522}
---- !u!4 &1547800633
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1547800631}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 59.778374, y: 23.535776, z: -49.025238}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 399727487}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1551090054
 Mesh:
   m_ObjectHideFlags: 0

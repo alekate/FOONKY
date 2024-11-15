@@ -9,12 +9,12 @@ public class ShopSystem : MonoBehaviour
 
     void Start()
     {
-        if (PointRecorder.Instance.haveRifle)
+        if (PP_PointRecorder.Instance.haveRifle)
         {
             Destroy(rifle);
         }
 
-        if (PointRecorder.Instance.haveShotgun)
+        if (PP_PointRecorder.Instance.haveShotgun)
         {
             Destroy(shotgun);
         }

@@ -11,32 +11,10 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-       
-        StartCoroutine(Wait());
-    }
-
-    /*private void Start() 
-    {
-        PlayerPrefs.HasKey("HasDoneAnalytics", 0);
-    }*/
-
-   
-    IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(0.5f); //corutina adnashe
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Load the next scene
+        PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("Analytics");
-        /*
-        if (PlayerPrefs.HasKey("HasDoneAnalytics", 0) <= 0)
-        {
-            SceneManager.LoadScene("Level1");
-        }
-        else
-        {
-            SceneManager.LoadScene("Analytics");
-        }*/
     }
-
+   
     public void mainMenu()
     {
         SceneManager.LoadScene("MENU");
