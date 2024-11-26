@@ -34,7 +34,7 @@ public class PlayerMoves : MonoBehaviour
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode sprintKey = KeyCode.LeftShift;
-    public KeyCode crouchKey = KeyCode.C;
+
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -47,7 +47,7 @@ public class PlayerMoves : MonoBehaviour
     private bool exitingSlope;
 
     [Header("Audio")]
-    [SerializeField] private AudioSource audioSource;
+
 
 
     public Transform orientation;
@@ -84,15 +84,12 @@ public class PlayerMoves : MonoBehaviour
 
         startYScale = transform.localScale.y;
 
-        audioSource = GetComponent<AudioSource>();
-
         Application.targetFrameRate = 60;
 
     }
 
     private void Update()
     {
-        Auido();
         // ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
@@ -105,19 +102,6 @@ public class PlayerMoves : MonoBehaviour
             rb.drag = groundDrag;
         else
             rb.drag = 0;
-    }
-
-    public void Auido()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            audioSource.Play();
-        }
-        else
-        {
-            audioSource.Stop();
-        }
-
     }
 
     private void FixedUpdate()
@@ -138,19 +122,6 @@ public class PlayerMoves : MonoBehaviour
             Jump();
 
             Invoke(nameof(ResetJump), jumpCooldown);
-        }
-
-        // start crouch
-        if (Input.GetKeyDown(crouchKey))
-        {
-            transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
-            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
-        }
-
-        // stop crouch
-        if (Input.GetKeyUp(crouchKey))
-        {
-            transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
         }
     }
 
@@ -186,13 +157,6 @@ public class PlayerMoves : MonoBehaviour
             state = MovementState.dashing;
             desiredMoveSpeed = dashSpeed;
             speedChangeFactor = dashSpeedChangeFactor;
-        }
-
-        // Mode - Crouching
-        else if (Input.GetKey(crouchKey))
-        {
-            state = MovementState.crouching;
-            desiredMoveSpeed = crouchSpeed;
         }
 
         // Mode - Sprinting

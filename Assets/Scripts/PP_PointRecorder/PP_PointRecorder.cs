@@ -9,21 +9,26 @@ public class PP_PointRecorder : MonoBehaviour
     public static PP_PointRecorder Instance { get; private set; }
 
     [SerializeField] public float absolutePoints = 0;
+
+
+    [SerializeField] public int enemyCount1 = 0;
+    [SerializeField] public int totalEnemies1 = 0;
     [SerializeField] public float maxTimeLVL1 = 0;
     [SerializeField] public int grafittisLVL1 = 0;
     [SerializeField] public int maxGrafLVL1 = 0;
+
     [SerializeField] public float maxTimeLVL2 = 0;
     [SerializeField] public int grafittisLVL2 = 0;
     [SerializeField] public int maxGrafLVL2 = 0;
+    [SerializeField] public int enemyCount2 = 0;
+    [SerializeField] public int totalEnemies2 = 0;
+
     [SerializeField] public float maxTimeLVL3 = 0;
     [SerializeField] public int grafittisLVL3 = 0;
     [SerializeField] public int maxGrafLVL3 = 0;
-    [SerializeField] public int enemyCount1 = 0;
-    [SerializeField] public int totalEnemies1 = 0;
-    [SerializeField] public int enemyCount2 = 0;
-    [SerializeField] public int totalEnemies2 = 0;
     [SerializeField] public int enemyCount3 = 0;
     [SerializeField] public int totalEnemies3 = 0;
+
     [SerializeField] public bool haveRifle;
     [SerializeField] public bool haveShotgun;
 
@@ -31,7 +36,7 @@ public class PP_PointRecorder : MonoBehaviour
 
     private void Awake()
     {
-        GameObject puntos = GameObject.Find("Puntos");
+        GameObject puntos = GameObject.Find("Points");
         pointText = puntos.GetComponent<TextMeshProUGUI>();
     }
 
@@ -77,6 +82,8 @@ public class PP_PointRecorder : MonoBehaviour
             totalEnemies2 = PlayerPrefs.GetInt("totalEnemies2");
             maxGrafLVL2 = PlayerPrefs.GetInt("maxGrafLVL2");
         }
+
+
     }
 
 

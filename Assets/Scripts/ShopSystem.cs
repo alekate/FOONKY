@@ -6,15 +6,16 @@ public class ShopSystem : MonoBehaviour
 {
     public GameObject rifle;
     public GameObject shotgun;
+    public PP_PointRecorder PP_PointRecorder;
 
     void Start()
     {
-        if (PP_PointRecorder.Instance.haveRifle)
+        if (PP_PointRecorder.haveRifle)
         {
             Destroy(rifle);
         }
 
-        if (PP_PointRecorder.Instance.haveShotgun)
+        if (PP_PointRecorder.haveShotgun)
         {
             Destroy(shotgun);
         }
