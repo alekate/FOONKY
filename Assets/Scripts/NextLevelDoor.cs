@@ -31,16 +31,7 @@ public class NextLevelDoor : MonoBehaviour
         pointSystem = FindObjectOfType<PointSystem>();
         timer = FindObjectOfType<Timer>();
         currentSceneName = SceneManager.GetActiveScene().name;
-        // Initialize Unity services
         await UnityServices.InitializeAsync();
-    }
-
-    public void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.L)) 
-        {
-            SceneManager.LoadScene("LEVEL2");
-        }
     }
 
     private void OnCollisionEnter(Collision other)
@@ -54,11 +45,10 @@ public class NextLevelDoor : MonoBehaviour
             countPointsText.text = pointSystem.countPoints.ToString();
             maxTimeLVL1Text.text = pointSystem.countPoints.ToString();
 
-            // Update the timer text using the Timer components
-            timerText.text = timer.timerText.text;
+            // Actualiza el texto del timer usando los datos de tiempo guardados
+            timerText.text = timer.timerText.text; // Esto actualizará el texto de tiempo en la UI de fin de nivel
 
-
-            // datos guardados
+            // Datos guardados
             PP_PointRecorder.Instance.AddPoints(pointSystem.countPoints);
             PP_PointRecorder.Instance.SetLevelStats(currentSceneName, pointSystem.graffitiCount, pointSystem.graffitiTotal, timer.ElapsedTime, pointSystem.totalKills, pointSystem.enemyTotal);
             float maxTime = PP_PointRecorder.Instance.maxTimeLVL1;
@@ -68,7 +58,7 @@ public class NextLevelDoor : MonoBehaviour
             pauseMenuUI.SetActive(false);
             endLevelUI.SetActive(true);
 
-            Time.timeScale = 0f; // This pauses the game
+            Time.timeScale = 0f; // Esto pausa el juego
             GameIsPaused = true;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -77,7 +67,8 @@ public class NextLevelDoor : MonoBehaviour
             LevelEnd();
         }
     }
-    
+
+
     private string FormatTime(float time)
     {
         int minutes = Mathf.FloorToInt(time / 60);
@@ -93,11 +84,10 @@ public class NextLevelDoor : MonoBehaviour
         CustomEvent LevelEndEvent = new CustomEvent("LevelEndEvent")
         {
             { "levelGraffiti", pointSystem.graffitiCount },
-            { "levelTime", timer.ElapsedTime }, // Use public property ElapsedTime
+            { "levelTime", timer.ElapsedTime },
             { "levelIndex", currentSceneName }
         };
 
-        // Record the event with AnalyticsService.Instance.CustomData
         AnalyticsService.Instance.RecordEvent(LevelEndEvent);
         AnalyticsService.Instance.Flush();
     }

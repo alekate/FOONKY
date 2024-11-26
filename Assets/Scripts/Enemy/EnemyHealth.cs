@@ -40,11 +40,6 @@ public class EnemyHealth : MonoBehaviour
         enemyAwareness.isAggro = true;
         enemyAnim.SetFloat("Health", health);
 
-       /* if (health <= 25f)
-        {
-            isBroken = true;
-        }*/
-
         if (health <= 0)
         {
             pointSystem.CountPoints(points, gun); 
@@ -53,10 +48,17 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    void Die ()
+    void Die()
     {
-        Destroy(gameObject);
+
+        enemyAnim.SetBool("isBroken", isBroken);
+        enemyAwareness.isAggro = false;
+
+        GetComponent<EnemyAwareness>().enabled = false;
+        GetComponent<EnemyAI>().enabled = false;
+        GetComponent<SphereCollider>().enabled = false;
     }
+
 
     public void ColorChange()
     {

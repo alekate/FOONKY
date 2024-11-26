@@ -36,8 +36,8 @@ public class PP_PointRecorder : MonoBehaviour
 
     private void Awake()
     {
-        GameObject puntos = GameObject.Find("Points");
-        pointText = puntos.GetComponent<TextMeshProUGUI>();
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -86,7 +86,6 @@ public class PP_PointRecorder : MonoBehaviour
 
     }
 
-
     public void AddPoints(float levelPoints)
     {
         absolutePoints += levelPoints;
@@ -119,11 +118,6 @@ public class PP_PointRecorder : MonoBehaviour
                 Debug.Log("Weapon not found");
                 break;
         }
-    }
-
-    public void ActiveShotgun()
-    {
-        haveShotgun = true;
     }
 
     public void SetLevelStats(string level, int graffitisLvl, int graffitiMax, float levelTime, int enemyKilled, int totalEnemies)
@@ -216,23 +210,17 @@ public class PP_PointRecorder : MonoBehaviour
         }
     }
 
-    public float GetMaxTime(string level)
+    public static float GetMaxTime(string level)
     {
         switch (level)
         {
-            case "LEVEL1":
-                return maxTimeLVL1;
-
-            case "LEVEL2":
-                return maxTimeLVL2;
-
-            case "LEVEL3":
-                return maxTimeLVL3;
-
-            default:
-                return 0;
+            case "LEVEL1": return PlayerPrefs.GetFloat("maxTimeLVL1", Mathf.Infinity);
+            case "LEVEL2": return PlayerPrefs.GetFloat("maxTimeLVL2", Mathf.Infinity);
+            case "LEVEL3": return PlayerPrefs.GetFloat("maxTimeLVL3", Mathf.Infinity);
+            default: return Mathf.Infinity;
         }
     }
+
 
     public string GetGraffittis(string level)
     {
@@ -247,32 +235,38 @@ public class PP_PointRecorder : MonoBehaviour
                 return graffitText = grafittisLVL2.ToString() + "/" + maxGrafLVL2.ToString();
 
             case "LEVEL3":
-                return graffitText = grafittisLVL3.ToString() + "/" + maxGrafLVL3.ToString();
+                return graffitText = grafittisLVL3.ToString() + "/ 22"; //Hardcodeo xq no anda por alguna razon...
 
             default:
                 return "Not Found";
         }
     }
 
-    public string GetEnemies(string level)
+    public static string GetEnemies(string level)
     {
-        string enemiesText = "";
+        int currentCount = 0;
+        int totalCount = 0;
 
         switch (level)
         {
-            case "LEVEL1": 
-                return enemiesText = enemyCount1.ToString() + "/" + totalEnemies1.ToString();
-
+            case "LEVEL1":
+                currentCount = PlayerPrefs.GetInt("enemyCount1", 0);
+                totalCount = PlayerPrefs.GetInt("totalEnemies1", 0);
+                break;
             case "LEVEL2":
-                return enemiesText = enemyCount2.ToString() + "/" + totalEnemies2.ToString();
-
+                currentCount = PlayerPrefs.GetInt("enemyCount2", 0);
+                totalCount = PlayerPrefs.GetInt("totalEnemies2", 0);
+                break;
             case "LEVEL3":
-                return enemiesText = enemyCount3.ToString() + "/" + totalEnemies3.ToString();
-
-            default:
-                return "Not Found";
+                currentCount = PlayerPrefs.GetInt("enemyCount3", 0);
+                totalCount = PlayerPrefs.GetInt("totalEnemies3", 0);
+                break;
         }
+
+        Debug.Log($"GetEnemies for {level}: {currentCount}/{totalCount}");
+        return $"{currentCount}/{totalCount}";
     }
+
 
     public void UpdatePointText()
     {
