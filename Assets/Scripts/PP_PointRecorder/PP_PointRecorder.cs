@@ -171,10 +171,18 @@ public class PP_PointRecorder : MonoBehaviour
                 maxGrafLVL2 = graffitiMax;
                 PlayerPrefs.SetInt("maxGrafLVL2", maxGrafLVL2);
 
-                if (levelTime < maxTimeLVL2)
+               if (levelTime == 0)
                 {
                     maxTimeLVL2 = levelTime;
                     PlayerPrefs.SetFloat("maxTimeLVL2", maxTimeLVL2);
+                }
+                else
+                {
+                    if (levelTime < maxTimeLVL2)
+                    {
+                        maxTimeLVL2 = levelTime;
+                        PlayerPrefs.SetFloat("maxTimeLVL2", maxTimeLVL2);
+                    }
                 }
 
                 if (enemyKilled > enemyCount2)
@@ -198,10 +206,18 @@ public class PP_PointRecorder : MonoBehaviour
                 maxGrafLVL3 = graffitiMax;
                 PlayerPrefs.SetInt("maxGrafLVL3", maxGrafLVL3);
 
-                if (levelTime < maxTimeLVL3)
+                if (levelTime == 0)
                 {
                     maxTimeLVL3 = levelTime;
                     PlayerPrefs.SetFloat("maxTimeLVL3", maxTimeLVL3);
+                }
+                else
+                {
+                    if (levelTime < maxTimeLVL3)
+                    {
+                        maxTimeLVL3 = levelTime;
+                        PlayerPrefs.SetFloat("maxTimeLVL3", maxTimeLVL3);
+                    }
                 }
 
                 if (enemyKilled > enemyCount3)
