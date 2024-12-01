@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LEVEL3/LEVEL3.unity
     guid: cd1ebacca3dfe6d4f9ea024240543d92
   - enabled: 1
+    path: Assets/Scenes/Cinematica/CINEMATIC4.unity
+    guid: 524628ce3a18f654490f87b3344aa70b
+  - enabled: 1
     path: Assets/Scenes/HIDEOUT.unity
     guid: 8a2a41a5cf7239748ab7cc3c2453085a
   - enabled: 1

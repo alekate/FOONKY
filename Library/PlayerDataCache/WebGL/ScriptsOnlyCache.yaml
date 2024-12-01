@@ -167,14 +167,20 @@ ScriptsOnlyBuild:
     fullTypeName: MainMenu
     methodName: Hideout
   - assembly: Assembly-CSharp
+    fullTypeName: DoorLevel
+    methodName: NextLevel
+  - assembly: Assembly-CSharp
     fullTypeName: MainMenu
-    methodName: Hideout
+    methodName: NextScene
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
     methodName: Resume
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
     methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: DoorLevel
+    methodName: NextLevel
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
     methodName: Resume
@@ -433,19 +439,126 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     Assets/Scenes/Cinematica/CINEMATIC3.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
     - Class: 28
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
     - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1604}
+    - Class: 114
+      Script: {instanceID: 1608}
+    - Class: 114
+      Script: {instanceID: 2204}
+    - Class: 114
+      Script: {instanceID: 2914}
+    - Class: 114
+      Script: {instanceID: 3176}
+    - Class: 114
+      Script: {instanceID: 3548}
+    - Class: 114
+      Script: {instanceID: 6048}
+    - Class: 114
+      Script: {instanceID: 6974}
+    - Class: 114
+      Script: {instanceID: 7402}
+    - Class: 115
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Cinematica/CINEMATIC4.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1604}
+    - Class: 114
+      Script: {instanceID: 1608}
+    - Class: 114
+      Script: {instanceID: 2204}
+    - Class: 114
+      Script: {instanceID: 2914}
+    - Class: 114
+      Script: {instanceID: 3176}
+    - Class: 114
+      Script: {instanceID: 3548}
+    - Class: 114
+      Script: {instanceID: 6048}
+    - Class: 114
+      Script: {instanceID: 6974}
+    - Class: 114
+      Script: {instanceID: 7402}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     Assets/Scenes/HIDEOUT.unity:
     - Class: 1
@@ -925,6 +1038,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 238
       Script: {instanceID: 0}
     - Class: 850595691
       Script: {instanceID: 0}
@@ -1837,7 +1952,7 @@ ScriptsOnlyBuild:
     className: TMPro_InstructionOverlay
   - hash:
       serializedVersion: 2
-      Hash: 7105668297865e2dd610460c29f4af9e
+      Hash: 93c8ba4fb828ce9b1384f439e64df644
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: LevelRecord
@@ -1903,7 +2018,7 @@ ScriptsOnlyBuild:
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 21734c562579e3d116172f55b99cb533
+      Hash: 97e5d38ad9fcfab6c88b9e6faeb95ea5
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ShopSystem
@@ -2005,7 +2120,7 @@ ScriptsOnlyBuild:
     className: GlobalMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 134976f0115f4aa02ef7e65497db48d9
+      Hash: 2d7801fcb2074b97c11e194ed3c65c7f
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PP_PointRecorder
@@ -2473,7 +2588,7 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: e9ce79ee6b1e99a660b20c8e9025f499
+      Hash: 88e986070773b0fb24cf9d31d4ec3d65
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerMoves
@@ -2625,6 +2740,7 @@ ScriptsOnlyBuild:
   - Assets/Scenes/LEVEL2/LEVEL2.unity
   - Assets/Scenes/Cinematica/CINEMATIC3.unity
   - Assets/Scenes/LEVEL3/LEVEL3.unity
+  - Assets/Scenes/Cinematica/CINEMATIC4.unity
   - Assets/Scenes/HIDEOUT.unity
   - Assets/Scenes/CREDITS.unity
   playerPath: C:/Users/RTECH/Downloads/FOONKY GOLD

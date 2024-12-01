@@ -3554,7 +3554,7 @@ struct U3CShowDamageEffectU3Ed__23_t609BD8822DD201D13C26F6490144651A76B54903  : 
 	RuntimeObject* ___U3CU3E2__current;
 	PlayerHealth_t4ABE9752A816003B9D76E5E667FBA14FED668ABC* ___U3CU3E4__this;
 };
-struct U3CSmoothlyLerpMoveSpeedU3Ed__49_tA1C34FF2F9791E8DA46F284AE43F5E8E4B6B49FB  : public RuntimeObject
+struct U3CSmoothlyLerpMoveSpeedU3Ed__46_t7BE88C7211E4DF3D9EE76D6F19EE75404A3945B8  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -14918,6 +14918,7 @@ struct LevelRecord_t92725F22694E3CA5D888F26A404549048320FA0E  : public MonoBehav
 	TextMeshPro_t4560AB28A3EAF503895A781A9C625273D833270E* ___graffittiText;
 	TextMeshPro_t4560AB28A3EAF503895A781A9C625273D833270E* ___enemiesText;
 	String_t* ___level;
+	PP_PointRecorder_t80994E0FFD18DC5A10870701528D941A7115F981* ___PP_PointRecorder;
 };
 struct LifeSistemSlider_tC8483D2DCBA265FA217DC282C53F9571D04A5A51  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -15077,19 +15078,19 @@ struct ObjectSpin_tE4A801A6C63FE0773DE2FD043571CB80CC9F194B  : public MonoBehavi
 struct PP_PointRecorder_t80994E0FFD18DC5A10870701528D941A7115F981  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
 	float ___absolutePoints;
+	int32_t ___enemyCount1;
+	int32_t ___totalEnemies1;
 	float ___maxTimeLVL1;
 	int32_t ___grafittisLVL1;
 	int32_t ___maxGrafLVL1;
 	float ___maxTimeLVL2;
 	int32_t ___grafittisLVL2;
 	int32_t ___maxGrafLVL2;
+	int32_t ___enemyCount2;
+	int32_t ___totalEnemies2;
 	float ___maxTimeLVL3;
 	int32_t ___grafittisLVL3;
 	int32_t ___maxGrafLVL3;
-	int32_t ___enemyCount1;
-	int32_t ___totalEnemies1;
-	int32_t ___enemyCount2;
-	int32_t ___totalEnemies2;
 	int32_t ___enemyCount3;
 	int32_t ___totalEnemies3;
 	bool ___haveRifle;
@@ -15194,14 +15195,12 @@ struct PlayerMoves_t7687E0DCFFC247BD0831590A0AE3D1DEB5DF680B  : public MonoBehav
 	float ___startYScale;
 	int32_t ___jumpKey;
 	int32_t ___sprintKey;
-	int32_t ___crouchKey;
 	float ___playerHeight;
 	LayerMask_t97CB6BDADEDC3D6423C7BCFEA7F86DA2EC6241DB ___whatIsGround;
 	bool ___grounded;
 	float ___maxSlopeAngle;
 	RaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5 ___slopeHit;
 	bool ___exitingSlope;
-	AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___audioSource;
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___orientation;
 	float ___horizontalInput;
 	float ___verticalInput;
@@ -15278,6 +15277,7 @@ struct ShopSystem_t969816C13A8E0E4669243BFC89ABF449464A849D  : public MonoBehavi
 {
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___rifle;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___shotgun;
+	PP_PointRecorder_t80994E0FFD18DC5A10870701528D941A7115F981* ___PP_PointRecorder;
 };
 struct ShowPoints_tE4ABAEEC634942D1A184D21F010667D656B508DB  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -21165,7 +21165,7 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize6784 = { sizeof(MoveCamera_t
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize6785;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize6785 = { sizeof(int32_t)+ sizeof(RuntimeObject), sizeof(int32_t), 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize6786;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize6786 = { sizeof(U3CSmoothlyLerpMoveSpeedU3Ed__49_tA1C34FF2F9791E8DA46F284AE43F5E8E4B6B49FB), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize6786 = { sizeof(U3CSmoothlyLerpMoveSpeedU3Ed__46_t7BE88C7211E4DF3D9EE76D6F19EE75404A3945B8), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize6787;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize6787 = { sizeof(PlayerMoves_t7687E0DCFFC247BD0831590A0AE3D1DEB5DF680B), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize6788;
