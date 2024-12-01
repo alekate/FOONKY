@@ -8,6 +8,7 @@ public class LevelRecord : MonoBehaviour
     public TextMeshPro timeText; 
     public TextMeshPro graffittiText; 
     public TextMeshPro enemiesText;
+    public float lvlTime;
 
     public string level;
     public PP_PointRecorder PP_PointRecorder;
@@ -16,7 +17,7 @@ public class LevelRecord : MonoBehaviour
     {
         enemiesText.text = PP_PointRecorder.GetEnemies(level);
         graffittiText.text = PP_PointRecorder.GetGraffittis(level);
-        float lvlTime = PP_PointRecorder.GetMaxTime(level);
+        lvlTime = PP_PointRecorder.GetMaxTime(level);
 
         if (lvlTime < 1)
         {
